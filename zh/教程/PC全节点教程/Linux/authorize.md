@@ -13,8 +13,11 @@
 3. 在命令窗口输入如下命令：
 
 ```
-cd /data/bfchain/
+
+cd /data/bfchain/    ##执行该命令将路径切至BFChain主目录下##
+
 ./bcf  -ba systemSecret="您的节点密码",delegateSecret="您计划绑定的身份主密码"
+
 ```
 
 > 注：以上命令中，双引号内容需要替换成对应的内容
