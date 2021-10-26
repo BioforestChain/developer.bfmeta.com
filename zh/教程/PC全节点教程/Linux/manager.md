@@ -12,7 +12,10 @@
 通过执行如下命令，可完成节点密码修改：
 
 ```
-./bcf --setSystemKey systemKeyOld="OldPassw0rd",systemKeyNew="NewPassw0rd"
+
+cd /data/bfchain/  ##执行该命令将路径切至BFChain主目录下##
+
+./bcf --setSystemKey systemKeyOld="您的节点旧密码",systemKeyNew="您要设置的新密码"     ##执行节点密码修改命令，命令中双引号中文内容需要替换成对应的内容##
 
 ```
 
@@ -24,7 +27,7 @@
 
 1. 为BCF节点绑定身份(地址)
 
-详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/authorize.html#节点身份绑定)
+详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Linux/authorize.md#节点身份绑定)
 
 > 注：请确保绑定的地址有足够的主链数字权益以支付事件上链费。
 
@@ -33,7 +36,7 @@
 您需要发起一笔“申请成为受托人”事件，将您绑定的地址身份置为受托人，执行如下命令：
 
 ```
-./bcf --trUsername secret="123",fee+100,alias="username" // 设置用户名
+./bcf --trUsername secret="123",fee=100,alias="username" // 设置用户名
 ./bcf --trDelegate secret="123",fee=100 // 申请成为受托人
 ```
 3. 开启接收投票
@@ -65,7 +68,7 @@
 
 1. 为BCF节点绑定身份(地址)
 
-详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.html#节点身份绑定)
+详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Linux/authorize.md#节点身份绑定)
 
 > 注：请确保绑定的地址有足够的主链数字权益以支付事件上链费。
 
@@ -102,4 +105,4 @@
 
 当前，用户只能通过BFChain节点管理器进行节点重启。
 
-> 注：节点重启后，节点原绑定的身份(地址)会解绑，用户需要重新再绑定一次。详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.html#节点身份绑定)
+> 注：节点重启后，节点原绑定的身份(地址)会解绑，用户需要重新再绑定一次。详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Linux/authorize.md#节点身份绑定)
