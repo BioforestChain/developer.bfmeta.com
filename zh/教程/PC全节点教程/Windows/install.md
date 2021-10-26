@@ -23,7 +23,7 @@
 
 1. 应用下载
    
-   您需要先从BFChain提供的官方渠道下载BCF节点程序包。即刻前往 [BFChain开发者社区](https://developer.bfchain.com/download/bcf.html)下载。
+   您需要先从BFChain提供的官方渠道下载BCF节点程序包。即刻前往 [BFChain开发者社区](https://developer.bfchain.com/bfchain%e8%8a%82%e7%82%b9%e8%bd%af%e4%bb%b6/)下载。
    
 1. 安装准备
 
