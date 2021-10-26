@@ -7,12 +7,26 @@
 
 本章节仅介绍如何通过命令行窗口管理您的节点。如您想学习如何在节点管理器中管理节点，请参见[节点管理器操作手册](https://serviceapi.instinct.one/marketplace/public/file/ext?path=/default/NodeManagerOperationManual.pdf)
 
+> 注：在执行本章节命令前，请先确保您本地的BCF节点软件已经启动。
+
 
 ## 修改节点密码
-通过执行如下命令，可完成节点密码修改：
+
+通过执行如下命令，可完成节点密码修改。
+
+1.将Windows命令窗口切换至安装BCF节点软件所在目录下。如，当前命令窗口在C盘，而BCF安装于本地D盘的BFChain文件夹下，则执行如下命令
 
 ```
-bcf /setSystemKey systemKeyOld="OldPassw0rd",systemKeyNew="NewPassw0rd"
+
+d:   //先将路径从c盘切换至BCF所在的d盘下
+cd BFChain    //再将路径指向d盘的子目录名下
+
+```
+2.修改节点密码
+
+```
+
+bcf /setSystemKey systemKeyOld="您的节点旧密码",systemKeyNew="您要设置的节点新密码"   
 
 ```
 
@@ -24,7 +38,7 @@ bcf /setSystemKey systemKeyOld="OldPassw0rd",systemKeyNew="NewPassw0rd"
 
 1. 为BCF节点绑定身份(地址)
 
-详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.html#节点身份绑定)
+详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.md#节点身份绑定)
 
 > 注：请确保绑定的地址有足够的主链数字权益以支付事件上链费。
 
@@ -33,8 +47,10 @@ bcf /setSystemKey systemKeyOld="OldPassw0rd",systemKeyNew="NewPassw0rd"
 您需要发起一笔“申请成为受托人”事件，将您绑定的地址身份置为受托人，执行如下命令：
 
 ```
-bcf /trUsername secret="123",fee+100,alias="username" // 设置用户名
+
+bcf /trUsername secret="123",fee=100,alias="username" // 设置用户名
 bcf /trDelegate secret="123",fee=100 // 申请成为受托人
+
 ```
 3. 开启接收投票
 
@@ -43,6 +59,7 @@ bcf /trDelegate secret="123",fee=100 // 申请成为受托人
 发起一笔“接收投票”事件的命令如下：
 
 ```
+
 bcf /trAcceptVote sercet="123",fee=100
 
 ```
@@ -52,6 +69,7 @@ bcf /trAcceptVote sercet="123",fee=100
 当您的节点已经准备好(区块同步到最高、节点状态正常、网络良好)，则可以通过执行如下命令为您的节点开启打块：
 
 ```
+
 bcf /setSystemConfig verifyType="001",verifyKey="SystemKey",generateBlockEnale=true
 
 ```
@@ -65,7 +83,7 @@ bcf /setSystemConfig verifyType="001",verifyKey="SystemKey",generateBlockEnale=t
 
 1. 为BCF节点绑定身份(地址)
 
-详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.html#节点身份绑定)
+详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.md#节点身份绑定)
 
 > 注：请确保绑定的地址有足够的主链数字权益以支付事件上链费。
 
@@ -76,6 +94,7 @@ bcf /setSystemConfig verifyType="001",verifyKey="SystemKey",generateBlockEnale=t
 通过命令行窗口执行如下命令，可为节点开启自动投票：
 
 ```
+
 bcf /setSystemConfig verifyType="001",verifyKey="SystemKey",autoVoteEnable=true
 
 ```
@@ -84,6 +103,7 @@ bcf /setSystemConfig verifyType="001",verifyKey="SystemKey",autoVoteEnable=true
 用户若需要为某个已知地址的受托人投票，则可以通过命令行发起一笔“投票”事件
 
 ```
+
 bcf /trVote secret="123",fee=500,equity=0,recipientId=address
 
 ```
@@ -99,7 +119,7 @@ bcf /trVote secret="123",fee=500,equity=0,recipientId=address
 
 当前，用户只能通过BFChain节点管理器进行节点重启。
 
-> 注：节点重启后，节点原绑定的身份(地址)会解绑，用户需要重新再绑定一次。详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.html#节点身份绑定)
+> 注：节点重启后，节点原绑定的身份(地址)会解绑，用户需要重新再绑定一次。详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Windows/install.md#节点身份绑定)
 
 
 
