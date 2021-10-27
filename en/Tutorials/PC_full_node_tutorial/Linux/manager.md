@@ -33,7 +33,7 @@ For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_n
 You need to initiate an "application to become a trustee" event, set your bound address as a trustee, and execute the following command:
 
 ```
-./bcf --trUsername secret="123",fee+100,alias="username" // set the username
+./bcf --trUsername secret="123",fee=100,alias="username" // set the username
 ./bcf --trDelegate secret="123",fee=100 // Apply to become a trustee
 ```
 3. Turn on receiving votes
