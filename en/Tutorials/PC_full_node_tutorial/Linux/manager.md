@@ -12,7 +12,7 @@ This chapter only introduces how to manage your nodes through the command line w
 The node password can be modified by executing the following command:
 
 ```
-./bcf --setSystemKey systemKeyOld="OldPassw0rd",systemKeyNew="NewPassw0rd"
+./bcf --setSystemKey systemKeyOld="your old password",systemKeyNew="your new password"
 
 ```
 
