@@ -10,13 +10,13 @@ Follow the steps below to deploy a single node:
 
 1. Install the node program (BCF.exe) of the Biological Chain Forest data center version on a single node;
    
-   Follow the instructions in Chapter 3 of this article to complete the installation and configuration of BCF.exe. After the configuration is successful, double-click BCF.exe to run the node. If it is prompted that it is not authorized, follow the [\<Node authorization application\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#node-authorization-application) to run the node after completing the node authorization.
+   Follow the instructions in Chapter 3 of this article to complete the installation and configuration of BCF.exe. After the configuration is successful, double-click BCF.exe to run the node. If it is prompted that it is not authorized, follow the [\<Node authorization application\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#node-authorization-application) to run the node after completing the node authorization.
 
-2. Switch node network environment: please refer to [\<Configure Network Environment\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-network-environment);
+2. Switch node network environment: please refer to [\<Configure Network Environment\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-network-environment);
 
-3. Switch the chain of node operation: please refer to [\<Configure the chain that the node runs\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-the-chain-that-the-node-runs);
+3. Switch the chain of node operation: please refer to [\<Configure the chain that the node runs\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-the-chain-that-the-node-runs);
 
-4. Binding address: Please refer to [\<bind address\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#bind-address).
+4. Binding address: Please refer to [\<bind address\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#bind-address).
 
 After the above operations are successful, single-node deployment can be realized.
 
@@ -26,15 +26,15 @@ The following will take the deployment of three nodes as an example to explain h
 
 #### Installation
 
-Install BCF.exe on three different nodes (the node IPs are `192.168.0.1`, `192.168.0.2`, and `192.168.0.3` respectively) according to the installation steps in the manual. After the installation is successful, double-click BCF.exe to run the node. If it is prompted that it is not authorized, follow the [\<node application authorization\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#node-authorization-application), and you can run the node after completing the node authorization.
+Install BCF.exe on three different nodes (the node IPs are `192.168.0.1`, `192.168.0.2`, and `192.168.0.3` respectively) according to the installation steps in the manual. After the installation is successful, double-click BCF.exe to run the node. If it is prompted that it is not authorized, follow the [\<node application authorization\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#node-authorization-application), and you can run the node after completing the node authorization.
 
 #### Configuration
 
 To achieve node synchronization between multiple nodes, configure the node synchronization IP list, and automatically connect to the nodes in the list after the node is started. The specific operation method is as follows:
 
-1. Switch node network environment: please refer to [\<Configure Network Environment\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-network-environment);
+1. Switch node network environment: please refer to [\<Configure Network Environment\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-network-environment);
 
-2. Switch the chain of node operation: please refer to [\<Configure the chain that the node runs\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-the-chain-that-the-node-runs);
+2. Switch the chain of node operation: please refer to [\<Configure the chain that the node runs\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-the-chain-that-the-node-runs);
 
 3. Add the IP of the node to be synchronized (assuming that the user configures the official network):
    
@@ -44,13 +44,13 @@ To achieve node synchronization between multiple nodes, configure the node synch
    
    ![](./media/b1a01d19c2df459055cbdffbb66e6df6.png)
 
-4. Binding address: Please refer to [\<bind address\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#bind-address).
+4. Binding address: Please refer to [\<bind address\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#bind-address).
 
 > Note 1: Three nodes are deployed, so at least 3 blocks are required for each round, and at least 3 trustees need to be set here. We recommend 57 blocks and 114 trustees per round;
 
 > Note 2: The genesis block can be created by a node, then copy the genesis block to the `genesisInfos` folder of the node installation directory, and modify the configuration file according to the above steps to run;
 
-> Note 3: Blockchain authorization is required to run non-BFChain chains. For details, please see \<[Blockchain authorization](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#blockchain-authorization-application)\>.
+> Note 3: Blockchain authorization is required to run non-BFChain chains. For details, please see \<[Blockchain authorization](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#blockchain-authorization-application)\>.
 
 #### Run
 
@@ -187,9 +187,9 @@ For example, if you execute `–glb` in batches, you can get it by entering the 
 
 If the user wants to deploy multiple chains of the Biochain Forest Data Center version on a certain node, for example, if the user wants to deploy BFChain and another chain, FINChain, they can follow the steps below:
 
-1. The user downloads and installs the Biological Chain Forest data center version (BCF), and modifies the configuration file according to the above \<[single-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#single-node-deployment)\> method, and deploys after startup BFChain succeeded.
+1. The user downloads and installs the Biological Chain Forest data center version (BCF), and modifies the configuration file according to the above \<[single-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> method, and deploys after startup BFChain succeeded.
 
-2. According to \<[Configure the chain that the node runs](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-the-chain-that-the-node-runs)\>, switch to the creation block operation of FINChain, and check the corresponding configuration file. Configuration file path: `/installation directory/conf/"chain name"-config-"network type".json`.
+2. According to \<[Configure the chain that the node runs](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-the-chain-that-the-node-runs)\>, switch to the creation block operation of FINChain, and check the corresponding configuration file. Configuration file path: `/installation directory/conf/"chain name"-config-"network type".json`.
    
    For example: chain name = "fin", network type = `mainnet` (official network: `mainnet`; test network: `testnet`). Then the official network path of FINChain is as follows: `/installation directory/conf/fin-config-mainnet.json`.
 
@@ -199,7 +199,7 @@ If the user wants to deploy multiple chains of the Biochain Forest Data Center v
 
 ### Public chain deployment
 
-1. If you want to run the official network of BFChain public chain nodes, follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#single-node-deployment)\> and set the configuration file `/installation directory/conf/ Parameters in base-config.json`:
+1. If you want to run the official network of BFChain public chain nodes, follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> and set the configuration file `/installation directory/conf/ Parameters in base-config.json`:
    
    1. "`isGenesisBlockProvidedExternally`" is set to `false`
    
@@ -217,31 +217,31 @@ If the user wants to deploy multiple chains of the Biochain Forest Data Center v
 
 2. The access authority of the alliance chain is managed when the network is deployed, and the access authority is not managed on the blockchain.
 
-3. Follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#single-node-deployment)\> to deploy nodes using the Alliance Chain Genesis Block.
+3. Follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> to deploy nodes using the Alliance Chain Genesis Block.
 
-4. According to \<[Multi-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#multi-node-deployment)\>Configure the IP of the node connection, which can realize the synchronization of each node.
+4. According to \<[Multi-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#multi-node-deployment)\>Configure the IP of the node connection, which can realize the synchronization of each node.
 
-5. Independent management of each node between organizations\<[Configure the user name and password of the database](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-the-user-name-and-password-of-the-database)\>
+5. Independent management of each node between organizations\<[Configure the user name and password of the database](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-the-user-name-and-password-of-the-database)\>
 
 ### Private chain deployment
 
 1. You need to contact the Biochain Forest BCF team to apply for the genesis block of the private chain.
 
-2. Follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#single-node-deployment)\> to deploy the node using the private chain genesis block, so that the private chain can be started when the node is running.
+2. Follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> to deploy the node using the private chain genesis block, so that the private chain can be started when the node is running.
 
-3. According to \<[Multi-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#multi-node-deployment)\>Configure the IP of the node connection, which can realize the synchronization of each node.
+3. According to \<[Multi-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#multi-node-deployment)\>Configure the IP of the node connection, which can realize the synchronization of each node.
 
-4. Reset the blockchain on the private chain. See \<[Blockchain data reset](/en/Tutorials/PC_full_node_tutorial/Windows/faq.html#blockchain-data-reset)\>. If there are multiple nodes, it needs to be reset on each node.
+4. Reset the blockchain on the private chain. See \<[Blockchain data reset](/en/Tutorials/PC_full_node_tutorial/Windows/faq.md#blockchain-data-reset)\>. If there are multiple nodes, it needs to be reset on each node.
 
 ## Start-stop block
 
 ### Bind a single address
 
-For details, please refer to [\<Bind Address\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#bind-address).
+For details, please refer to [\<Bind Address\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#bind-address).
 
 ### Binding addresses in batches
 
-1. Refer to \<[node server environment preparation](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.html#node-server-environment-preparation)\>, upload the bandkeyhosts file to /data/ansible_dir/bandkeyhosts of the management server and configure the corresponding values ​​according to the following table . 
+1. Refer to \<[node server environment preparation](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#node-server-environment-preparation)\>, upload the bandkeyhosts file to /data/ansible_dir/bandkeyhosts of the management server and configure the corresponding values ​​according to the following table . 
 
 | bfchainnode001                              | Alias |
 | ------------------------------------------- | ---------------------- |
