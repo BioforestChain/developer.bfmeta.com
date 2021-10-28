@@ -8,7 +8,7 @@ The data in the following folders are all important data, the details are as fol
 
 1. `chaindata` folder: `chaindata` saves all the data of the current node's blockchain.
 
-2. `logs` folder: `logs` saves the running log of the current node. For the description of the log file, please refer to the noun explanation\<[log file name and content description](/en/Tutorials/PC_full_node_tutorial/Windows/glossary.html#log-file-name-and-content-description)\>.
+2. `logs` folder: `logs` saves the running log of the current node. For the description of the log file, please refer to the noun explanation\<[log file name and content description](/en/Tutorials/PC_full_node_tutorial/Windows/glossary.md#log-file-name-and-content-description)\>.
 
 3. `backup` folder: `backup` saves the key checkpoint data, which is used to quickly start or restore the node. If the data in this folder is lost, the node can still start normally, but it will take more time to rebuild the area Block chain.
 
@@ -89,7 +89,7 @@ Automatic voting parameter description
 
 1. After running, modify the configuration file to realize the automatic voting function
    
-    According to the automatic voting field of \<[Set node configuration information](/en/API_reference/PC_full_node/Interface_list/1-4.html#15-set-node-configuration-information)\>, the configuration information can be dynamically adjusted during the operation of the node.
+    According to the automatic voting field of \<[Set node configuration information](/en/API_reference/PC_full_node/Interface_list/1-4.md#15-set-node-configuration-information)\>, the configuration information can be dynamically adjusted during the operation of the node.
     As shown in the figure below, you can turn on automatic voting.
 
 ![](./media/7a6edda10551df73cb772e2e993139d4.png)
@@ -98,7 +98,7 @@ Automatic voting parameter description
 
 ### Use of Port
 
-1. TCP: Each chain uses a blockchain port by default. For BCF, the official network is 9000 and the test network is 19000. In addition, in order for the program to run normally, it is recommended to reserve the last ten ports of this port for use, such as 19000-19010. Open the configuration file of the chain that needs to be run. There are port configurations at the top of the file. If these ports conflict with other programs that the current node has started, you can configure them yourself. For details, please refer to the port configuration of [\<Configuration file description\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configuration-file-description).
+1. TCP: Each chain uses a blockchain port by default. For BCF, the official network is 9000 and the test network is 19000. In addition, in order for the program to run normally, it is recommended to reserve the last ten ports of this port for use, such as 19000-19010. Open the configuration file of the chain that needs to be run. There are port configurations at the top of the file. If these ports conflict with other programs that the current node has started, you can configure them yourself. For details, please refer to the port configuration of [\<Configuration file description\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configuration-file-description).
 
 2. UDP: Due to the existence of `stunserver`, udp ports of 49152-65535 need to be configured.
 
@@ -204,11 +204,11 @@ Since the text editing and other operations in the Windows console will cause th
 
 The following introduces several ways to check whether the node is running normally
 
-1. Use \<[Get node status interface](/en/API_reference/PC_full_node/Interface_list/1-2.html#get-node-status)\> to check the status of the node.
+1. Use \<[Get node status interface](/en/API_reference/PC_full_node/Interface_list/1-2.md#get-node-status)\> to check the status of the node.
 
-2. Use \<[Get current latest block of local node](/en/API_reference/PC_full_node/Interface_list/1-2.html#get-current-latest-block-of-local-node)\> to observe whether this node can maintain the same height as other nodes, If possible, the node is operating normally.
+2. Use \<[Get current latest block of local node](/en/API_reference/PC_full_node/Interface_list/1-2.md#get-current-latest-block-of-local-node)\> to observe whether this node can maintain the same height as other nodes, If possible, the node is operating normally.
 
-3. According to the log, check the log of the blocking process and search for the "error" keyword. If there is no error, the node is running normally. In general, when a node has an unrecoverable error, it can be reflected in the block process log. For details, please refer to \<[Log file name and content description](/en/Tutorials/PC_full_node_tutorial/Windows/glossary.html#log-file-name-and-content-description )\>.
+3. According to the log, check the log of the blocking process and search for the "error" keyword. If there is no error, the node is running normally. In general, when a node has an unrecoverable error, it can be reflected in the block process log. For details, please refer to \<[Log file name and content description](/en/Tutorials/PC_full_node_tutorial/Windows/glossary.md#log-file-name-and-content-description )\>.
 
 ## Common mistakes
 
@@ -220,7 +220,7 @@ If the genesis block does not match as shown in the figure below, please check w
 
 ### Username and password are not configured
 
-If there is an error on the interface as shown in the figure below, it means that the user name and password are not configured, please refer to [\<configuration database user name and password\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.html#configure-the-user-name-and-password-of-the-database) to configure the database user name and password.
+If there is an error on the interface as shown in the figure below, it means that the user name and password are not configured, please refer to [\<configuration database user name and password\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-the-user-name-and-password-of-the-database) to configure the database user name and password.
 
 ![](./media/c5d989448f1a4c91d831404d406c9a6e.png)
 

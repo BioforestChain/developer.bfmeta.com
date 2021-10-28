@@ -504,7 +504,7 @@ When the node completes the above identity binding, it means that your node is c
 
 > Note 1: For the use of the `ba` interface and its parameters, please refer to [\<Bind node account\>](/en/API_reference/PC_full_node/Interface_list/1-4#9-bind-node-account);
 
-> Note 2: As the text editing and other operations in the Windows console will temporarily stop the program, if there is no response on the BCF interface when executing the command in step 3, you can press `Enter` and the BCF will continue to run. You can also refer to [\<About the problem of program stopping when running the node program\>](/en/Tutorials/PC_full_node_tutorial/Windows/faq.html#about-the-problem-of-program-stopping-when-running-the-node-program) to solve this problem.
+> Note 2: As the text editing and other operations in the Windows console will temporarily stop the program, if there is no response on the BCF interface when executing the command in step 3, you can press `Enter` and the BCF will continue to run. You can also refer to [\<About the problem of program stopping when running the node program\>](/en/Tutorials/PC_full_node_tutorial/Windows/faq.md#about-the-problem-of-program-stopping-when-running-the-node-program) to solve this problem.
 
 
 
