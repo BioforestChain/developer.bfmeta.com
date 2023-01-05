@@ -18,7 +18,7 @@ You can complete the node identity binding in the following two ways:
 3. Enter the following command in the command window:
 
 ```
-cd /data/bfchain/
+cd /data/bfmeta/
 ./bcf -ba systemSecret="Your node password", delegateSecret="The master password of the identity you plan to bind"
 ```
 
@@ -30,12 +30,8 @@ cd /data/bfchain/
 
 - Complete identity binding through node manager
 
-1. Log in to the BFChain mobile app
-2. Enter the node manager
-3. Enter the node IP
-4. Enter the node password
-5. Bind the identity and security password to the node (if the identity has a security password)
-![bindingaddress2](./images/bindingaddress2.png)
+1. Please refer to the BFM Node Manager Tutorial to get more information.
 
 
-When the node completes the above identity binding, it means that your node is connected to the BFChain blockchain network and can directly participate in on-chain governance and block synchronization.
+
+When the node completes the above identity binding, it means that your node is connected to the BFChainMeta blockchain network and can directly participate in on-chain governance and block synchronization.

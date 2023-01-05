@@ -3,9 +3,9 @@
 You can manage nodes in the following two ways:
 
 -Send commands through the command line window for management
--Managed by the node manager provided by the biological chain forest
+-Managed by the BFM node manager provided by the BFChainMeta
 
-This chapter only introduces how to manage your nodes through the command line window. If you want to learn how to manage nodes in Node Manager, please refer to the Node Manager Operation Manual (https://serviceapi.instinct.one/marketplace/public/file/ext?path=/default/NodeManagerOperationManual.pdf)
+This chapter only introduces how to manage your nodes through the command line window. If you want to learn how to manage nodes in the BFM Node Manager, please refer to the BFM Node Manager Tutorial.
 
 
 ## Modify node password
@@ -18,9 +18,9 @@ The node password can be modified by executing the following command:
 
 > Note: After installing the BCF node program, it is strongly recommended that you change the node password first.
 
-## Forging block
+## Mining block
 
-By executing the following commands, you can participate in the election of block forgers, and you will be selected as a forger.
+By executing the following commands, you can participate in the election of block Miners, and you will be selected as a Miner.
 
 1. Bind the identity (address) to the BCF node
 
@@ -57,7 +57,7 @@ When your node is ready (the block is synchronized to the highest level, the nod
 ```
 At this point, your node has started the block forging campaign. Once selected, it means that your node has become the next round of block forging and will participate in the next round of block forging work.
 
-> Note: When your node is about to be upgraded or restarted, it is recommended to turn off block-breaking first, and then turn on block-breaking after the node returns to normal, so as not to affect your probability of being selected as a forger.
+> Note: When your node is about to be upgraded or restarted, it is recommended to turn off block-breaking first, and then turn on block-breaking after the node returns to normal, so as not to affect your probability of being selected as a miner.
 
 
 
@@ -93,13 +93,13 @@ If users need to vote for a trustee with a known address, they can initiate a "v
 
 ## Update node program
 
-Currently, users can only update nodes through the BFChain node manager.
+Currently, users can only update nodes through the BFChainMeta node manager.
 
 
 
 
 ## Restart the node program
 
-Currently, users can only restart the node through the BFChain node manager.
+Currently, users can only restart the node through the BFChainMeta node manager.
 
 > Note: After the node restarts, the identity (address) originally bound to the node will be unbound, and the user needs to bind again. For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#node-identity-binding)
