@@ -98,13 +98,13 @@
 
 ### Node program installation and configuration
 
-In order to ensure that you can run the biochain forest PC node program-BCF smoothly, we recommend that you use the following configuration equipment:
+In order to ensure that you can run the BFChainMeta PC node program-BCF smoothly, we recommend that you use the following configuration equipment:
 
    CPU: 16 cores (main frequency 3.0G+)
 
-   Memory: 32G
+   Memory: 16G
 
-   Hard Disk: SSD 2T or above
+   Hard Disk: SSD 1T or above
 
    System: CentOS 7.*
 
@@ -112,7 +112,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
 
 - The installation and configuration steps of the node program and the upgrade service program are as follows:
 
-1. Create a directory for bfchain
+1. Create a directory for BFChainMeta
 
     ```
     mkdir -p /data
@@ -120,10 +120,10 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
 
    
 
-2. Upload the bfchain.zip file (the compressed file contains the bfchain program and the upgrade service program) and unzip it to the /data directory
+2. Upload the bfmeta.zip file (the compressed file contains the BFChainMeta program and the upgrade service program) and unzip it to the /data directory
 
    ```
-   unzip -o -q /data/release/bfchain.zip -d /data/
+   unzip -o -q /data/release/bfmeta.zip -d /data/
    
    ```
 
@@ -132,25 +132,25 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
 3. Grant executable permissions to the file
 
    ```
-   chmod u+x /data/bfchain/bcf
-   chmod u+x /data/bfchain/mongoComponents/linux/mongo*
-   chmod u+x /data/bfchain/turnserver/bin/turnserver
+   chmod u+x /data/bfmeta/bcf
+   chmod u+x /data/bfmeta/mongoComponents/linux/mongo*
+   chmod u+x /data/bfmeta/turnserver/bin/turnserver
    chmod u+x /data/upgrade/mongoComponents/linux/mongo*
    chmod u+x /data/upgrade/upgrade
-   echo "export BCF_HOME=/data/bfchain"  >> /etc/profile
+   echo "export BCF_HOME=/data/bfmeta"  >> /etc/profile
    #生效环境变量
    source  /etc/profile 
    ```
 
    
 
-4. Configure supervisor (manage bfchain running in the background and upgrade service process)
+4. Configure supervisor (manage bfmeta running in the background and upgrade service process)
 
    ```
    echo -ne "
    	[program:bcf]	
-   	command=/data/bfchain/bcf  ; 
-   	directory=/data/bfchain
+   	command=/data/bfmeta/bcf  ; 
+   	directory=/data/bfmeta
    	autostart=true    ; 
    	user=root      ;
    	autorestart=unexpected   ;
@@ -160,7 +160,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
    	redirect_stderr=true ;
    	stdout_logfile_maxbytes=50MB  ;
    	stdout_logfile_backups = 20  ;
-   	stdout_logfile=/data/bfchain/logs/bcf.log    ;
+   	stdout_logfile=/data/bfmeta/logs/bcf.log    ;
    	stopasgroup=true   ;
    " >> /etc/supervisord.d/bcf.ini
    
@@ -228,10 +228,10 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
      6. Select inbound as the flow direction.
      7. For the operation performed on the matching item, select Allow.
      8. For the target, perform one of the following operations:
-     If you want to allow traffic from the bfchain node instance to all clients in the network, please select all instances in the network.
-     If you want to allow traffic from a specific client of the bfchain node instance, select the specified target tag. Enter the instance name of the client in the target tag.
+     If you want to allow traffic from the BFChainMeta node instance to all clients in the network, please select all instances in the network.
+     If you want to allow traffic from a specific client of the BFChainMeta node instance, select the specified target tag. Enter the instance name of the client in the target tag.
      9. Keep the default value of the IP address range of the source filter condition.
-     10. For the source IP address range, enter the IP address range of the bfchain node instance to be allowed as the source of access.
+     10. For the source IP address range, enter the IP address range of the BFChainMeta node instance to be allowed as the source of access.
      You can enter 0.0.0.0/0 to allow all ip address access traffic to pass, or you can enter a specific IP address to restrict access to only that ip address (the CIDR notation must be used).
      11. Keep the default value of none for the secondary source filter condition.
      12. For the protocol and port, please select the specified protocol and port, and then:
@@ -245,7 +245,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
      b) The open ports of all the back-end cloud servers allow access with characteristic ip addresses (such as 1.1.1.1):
      ![gcp-fw-allsource-limitsrc](./images/gcp-fw-allsource-limitsrc.png)
 
-     c) The open port of the cloud server with a specific back-end tag (such as bfchainnode) allows all ip addresses to access:
+     c) The open port of the cloud server with a specific back-end tag (such as BFChainMeta node) allows all ip addresses to access:
      ![gcp-fw-limitsource-allsrc](./images/gcp-fw-limitsource-allsrc.png)
 
      d) The open port of the cloud server with a specific back-end tag (such as bfchainnode) allows access to the characteristic ip address (such as 1.1.1.1):
@@ -294,7 +294,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
    
 ### Start the service
 
-1. Start BFChain node program-BCF
+1. Start BFChainMeta node program-BCF
 
    ```
    systemctl enable supervisord
@@ -324,24 +324,24 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
 1. Create bfchain directory
 
    ```
-   mkdir -p /data/bfchain/
+   mkdir -p /data/bfmeta/
    ```
 
-2. Download the release version to obtain the complete bfchain installation package (bfchain.zip).
+2. Download the release version to obtain the complete bfchain installation package (bfmeta.zip).
    
-3. Unzip bfchain.zip to the /data/bfchain directory
+3. Unzip bfmeta.zip to the /data/bfmeta directory
 
    ```
-   unzip -o -q /data/release/bfchain.zip -d /data/bfchain
+   unzip -o -q /data/release/bfmeta.zip -d /data/bfmeta
    ```
 
 4. Grant executable permissions to the file
 
    ```
-   chmod u+x /data/bfchain/bcf
-   chmod u+x /data/bfchain/mongoComponents/linux/mongo*
-   chmod u+x /data/bfchain/turnserver/bin/turnserver
-   echo "export BCF_HOME=/data/bfchain" >> /etc/profile
+   chmod u+x /data/bfmeta/bcf
+   chmod u+x /data/bfmeta/mongoComponents/linux/mongo*
+   chmod u+x /data/bfmeta/turnserver/bin/turnserver
+   echo "export BCF_HOME=/data/bfmeta" >> /etc/profile
    #Effective environment variables
    source /etc/profile
    ```
@@ -349,9 +349,9 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
 5. Configuration file
 
    - Download genesis block
-      Purchase the genesis block from the bfchain team and put the files in the /data/bfchain/genesisInfos directory
+      Purchase the genesis block from the bfchain team and put the files in the /data/bfmeta/genesisInfos directory
      
-   - Modify the configuration file (/data/bfchain/conf/base-config.json)
+   - Modify the configuration file (/data/bfmeta/conf/base-config.json)
      
       Configure the externally introduced genesis block isGenesisInfoProvideExternally to true
      ​ Configure the official network or test network bnid as b or c
@@ -360,7 +360,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
      ​ Configure the magic chainMagic of the imported genesis block
      
    - Configure node IP
-     Modify the peers field in the configuration file /data/bfchain/conf/bft-config-mainnet.json and add the ip of the initial connection
+     Modify the peers field in the configuration file /data/bfmeta/conf/bft-config-mainnet.json and add the ip of the initial connection
      
       ![config-peers](./images/config-peers.png)
      
@@ -370,8 +370,8 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
    ```
    echo -ne "
    [program:bcf]
-   command=/data/bfchain/bcf;
-   directory=/data/bfchain
+   command=/data/bfmeta/bcf;
+   directory=/data/bfmeta
    autostart=true;
    user=root;
    autorestart=unexpected;
@@ -381,7 +381,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
    redirect_stderr=true;
    stdout_logfile_maxbytes=50MB;
    stdout_logfile_backups = 20;
-   stdout_logfile=/data/bfchain/logs/bcf.log;
+   stdout_logfile=/data/bfmeta/logs/bcf.log;
    stopasgroup=true;
    ">> /etc/supervisord.d/bcf.ini
    ```
@@ -430,7 +430,7 @@ In order to ensure that you can run the biochain forest PC node program-BCF smoo
 
 ### Start the service
 
-1. Start BFChain node program-BCF
+1. Start BFChainMeta node program-BCF
 
    ```
    systemctl enable supervisord
