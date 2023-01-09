@@ -24,7 +24,7 @@ By executing the following commands, you can participate in the election of bloc
 
 1. Bind the identity (address) to the BCF node
 
-For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Linux/authorize.md)
+For details, please refer to [\<Node Identity Binding\>](/en/Tutorial/PC_full_node_tutorial/Linux/authorize.md)
 
 > Note: Please ensure that the bound address has enough main chain digital rights to pay the event chain fee.
 
@@ -65,7 +65,7 @@ At this point, your node has started the block forging campaign. Once selected, 
 
 1. Bind the identity (address) to the BCF node
 
-For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Linux/authorize.md)
+For details, please refer to [\<Node Identity Binding\>](/en/Tutorial/PC_full_node_tutorial/Linux/authorize.md)
 
 > Note: Please ensure that the bound address has enough main chain digital rights to pay the event chain fee.
 
@@ -102,4 +102,4 @@ Currently, users can only update nodes through the BFMeta node manager.
 
 Currently, users can only restart the node through the BFMeta node manager.
 
-> Note: After the node restarts, the identity (address) originally bound to the node will be unbound, and the user needs to bind again. For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Linux/authorize.md)
+> Note: After the node restarts, the identity (address) originally bound to the node will be unbound, and the user needs to bind again. For details, please refer to [\<Node Identity Binding\>](/en/Tutorial/PC_full_node_tutorial/Linux/authorize.md)
