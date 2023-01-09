@@ -5,7 +5,7 @@
 - 通过命令行窗口发送命令进行管理
 - 通过生物链林提供的节点管理器管理
 
-本章节仅介绍如何通过命令行窗口管理您的节点。如您想学习如何在节点管理器中管理节点，请参见[节点管理器操作手册](https://serviceapi.instinct.one/marketplace/public/file/ext?path=/default/NodeManagerOperationManual.pdf)
+本章节仅介绍如何通过命令行窗口管理您的节点。如您想学习如何在节点管理器中管理节点，请参见[BFM 节点管理器教程](https://serviceapi.instinct.one/marketplace/public/file/ext?path=/default/NodeManagerOperationManual.pdf)
 
 
 ## 修改节点密码
@@ -18,7 +18,7 @@
 
 ```
 
-cd /data/bfchain/    //执行该命令将路径切至BFChain主目录下
+cd /data/bfmeta/    //执行该命令将路径切至BFChainMeta主目录下
 
 ./bcf --setSystemKey systemKeyOld="您的节点旧密码",systemKeyNew="您要设置的新密码"       //执行节点密码修改命令，命令中双引号中文内容需要替换成对应的内容
 
@@ -30,10 +30,10 @@ cd /data/bfchain/    //执行该命令将路径切至BFChain主目录下
 
 > 注:在执行本章节命令前，请先确保
 >    1. 您的BCF节点软件已经启动
->    2. 当前命令窗口已在BFChain主目录下,若不是，则可执行如下命令完成切换
+>    2. 当前命令窗口已在BFChainMeta主目录下,若不是，则可执行如下命令完成切换
 >    
 >    ```
->    cd /data/bfchain/  //执行该命令将路径切至BFChain主目录下
+>    cd /data/bfmeta/  //执行该命令将路径切至BFChainMeta主目录下
 >    ```
 
 1. 为BCF节点绑定身份(地址)
@@ -79,10 +79,10 @@ cd /data/bfchain/    //执行该命令将路径切至BFChain主目录下
 
 > 注:在执行本章节命令前，请先确保
 >    1. 您的BCF节点软件已经启动
->    2. 当前命令窗口已在BFChain主目录下,若不是，则可执行如下命令完成切换
+>    2. 当前命令窗口已在BFChainMeta主目录下,若不是，则可执行如下命令完成切换
 >    
 >    ```
->    cd /data/bfchain/  //执行该命令将路径切至BFChain主目录下
+>    cd /data/bfmeta/  //执行该命令将路径切至BFChainMeta主目录下
 >    ```
 
 1. 为BCF节点绑定身份(地址)
@@ -115,13 +115,13 @@ cd /data/bfchain/    //执行该命令将路径切至BFChain主目录下
 
 ## 更新节点程序
 
-当前，用户只能通过BFChain节点管理器进行节点更新。
+当前，用户只能通过BFChainMeta节点管理器进行节点更新。
 
 
 
 
 ## 重启节点程序
 
-当前，用户只能通过BFChain节点管理器进行节点重启。
+当前，用户只能通过BFChainMeta节点管理器进行节点重启。
 
 > 注：节点重启后，节点原绑定的身份(地址)会解绑，用户需要重新再绑定一次。详情请参考[\<节点身份绑定\>](/zh/教程/PC全节点教程/Linux/authorize.md#节点身份绑定)
