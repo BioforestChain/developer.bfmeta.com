@@ -5,7 +5,7 @@
 - 通过命令行窗口发送命令进行管理
 - 通过生物链林提供的节点管理器管理
 
-本章节仅介绍如何通过命令行窗口管理您的节点。如您想学习如何在节点管理器中管理节点，请参见[BFM 节点管理器教程](https://serviceapi.instinct.one/marketplace/public/file/ext?path=/default/NodeManagerOperationManual.pdf)
+本章节仅介绍如何通过命令行窗口管理您的节点。如您想学习如何在节点管理器中管理节点，请参见[\<BFM节点管理器教程\>](/zh/教程/Node_manager_tutorial/index.md)
 
 
 ## 修改节点密码

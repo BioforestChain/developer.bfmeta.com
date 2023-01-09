@@ -5,7 +5,7 @@ You can manage nodes in the following two ways:
 -Send commands through the command line window for management
 -Managed by the BFM node manager provided by the BFChainMeta
 
-This chapter only introduces how to manage your nodes through the command line window. If you want to learn how to manage nodes in the BFM Node Manager, please refer to the BFM Node Manager Tutorial.
+This chapter only introduces how to manage your nodes through the command line window. If you want to learn how to manage nodes in the BFM Node Manager, please refer to [\<BFM Node Manager Tutorial\>](/en/Tutorial/Node_manager_tutorial/index.md)
 
 
 ## Modify node password
