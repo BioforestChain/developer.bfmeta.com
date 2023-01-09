@@ -2,7 +2,7 @@
 
 This operation manual mainly describes how to manage all your nodes in the BFChainMeta node manager application. Here, you will learn how to add, delete, manage node trustees and configure node-related parameters, etc.
 
-## Install the node manager application
+## Install the node manager
 
 Download the node manager application installation package from the BFChainMeta developer community https://developer.bfmeta.org. After the download is complete, select the application package and follow the steps to install it. After the installation is successful, skip the boot page and enter.
 
