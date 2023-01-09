@@ -34,4 +34,4 @@ cd /data/bfmeta/
 
 
 
-When the node completes the above identity binding, it means that your node is connected to the BFChainMeta blockchain network and can directly participate in on-chain governance and block synchronization.
+When the node completes the above identity binding, it means that your node is connected to the BFMeta blockchain network and can directly participate in on-chain governance and block synchronization.

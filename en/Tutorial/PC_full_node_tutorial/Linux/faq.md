@@ -1,6 +1,6 @@
 # Common problem sorting
 
-This chapter will introduce the solutions to common problems that may be encountered when using the BCF.exe version of the Biological Chain Forest data center. If you encounter a problem that is not listed in this chapter, please contact the BCF team (email address: service@bfchain.org) for more support.
+This chapter will introduce the solutions to common problems that may be encountered when using the BCF.exe version of the Biological Chain Forest data center. If you encounter a problem that is not listed in this chapter, please contact the BCF team (email address: service@bfmeta.org) for more support.
 
 ## Data generated when the node is running
 
@@ -44,7 +44,7 @@ If you want to automatically run BCF.exe when the node starts, there are the fol
 
 If users want to change the log level displayed in the log file under `logs`, they can set the log level on the node. The specific steps are as follows:
 
-1. Modify the configuration file before starting BCF.exe, the configuration file path: `/installation directory/conf/bft-config-testnet.json`. Modifying the parameters `consoleLogLevel` and `fileLogLevel` can realize the function of adjusting the log mode of console output and file output.
+1. Modify the configuration file before starting BCF.exe, the configuration file path: `/installation directory/conf/bfm-config-testnet.json`. Modifying the parameters `consoleLogLevel` and `fileLogLevel` can realize the function of adjusting the log mode of console output and file output.
 
 ![](./media/a0ae6c0dcba517acbe81f4db51d81bd1.png)
 
@@ -66,9 +66,9 @@ The following describes how to implement node automatic voting function
    
     Modify the configuration file, the configuration file path: `/installation directory/conf/`
    
-   1. Official network configuration file \`bft-config-mainnet.json\`
+   1. Official network configuration file \`bfm-config-mainnet.json\`
    
-   2. Test network configuration file `bft-config-testnet.json\`
+   2. Test network configuration file `bfm-config-testnet.json\`
       
        Modify the `enable` configuration to `true`, and run it after saving it to realize the automatic voting function.
       
@@ -226,12 +226,12 @@ If there is an error on the interface as shown in the figure below, it means tha
 
 ### Node authorization expired
 
-If there is an error on the interface as shown in the figure below, it means that the node authorization has expired. Please contact the BCF team (email address: service@bfchain.org) to re-authorize.
+If there is an error on the interface as shown in the figure below, it means that the node authorization has expired. Please contact the BCF team (email address: service@bfmeta.org) to re-authorize.
 
 ![](./media/a4cae03b21a38f1b9556d3788b67b9b9.png)
 
 ### Node authorization is about to expire
 
-If there is an error on the interface in the following figure, it means that the node authorization is about to expire. Please contact the BCF team (email address: service@bfchain.org) to obtain a new authorization before it expires. 
+If there is an error on the interface in the following figure, it means that the node authorization is about to expire. Please contact the BCF team (email address: service@bfmeta.org) to obtain a new authorization before it expires. 
 
 ![](./media/d31dea8c74bb76105d545f2a45b2ab49.png)

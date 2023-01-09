@@ -4,32 +4,32 @@
 
 | **Event Type ID** | **Event Type Name** |
 | -------------------- | ---------- |
-| `BFT-BFCHAIN-BSE-01` | Set security password |
-| `BFT-BFCHAIN-BSE-02` | Registered Forger |
-| `BFT-BFCHAIN-BSE-03` | Governance voting |
-| `BFT-BFCHAIN-BSE-04` | Set address alias |
-| `BFT-BFCHAIN-BSE-05` | Receive votes |
-| `BFT-BFCHAIN-BSE-06` | Decline to vote |
-| `BFT-BFCHAIN-WOD-00` | Create DAPPID |
-| `BFT-BFCHAIN-WOD-01` | DAPPID payment |
-| `BFT-BFCHAIN-EXT-00` | Data Attestation |
-| `BFT-BFCHAIN-AST-00` | Issuing rights |
-| `BFT-BFCHAIN-AST-01` | Equity Transfer |
-| `BFT-BFCHAIN-AST-02` | Destruction of rights and interests |
-| `BFT-BFCHAIN-AST-03` | Initiate a gift of rights and interests |
-| `BFT-BFCHAIN-AST-04` | Accept the gift of rights and interests |
-| `BFT-BFCHAIN-AST-05` | Initiate equity entrustment |
-| `BFT-BFCHAIN-AST-06` | Sign for entrusted rights |
-| `BFT-BFCHAIN-AST-07` | Transfer of main interest |
-| `BFT-BFCHAIN-AST-08` | Main interests moved in |
-| `BFT-BFCHAIN-AST-09` | Initiate equity exchange |
-| `BFT-BFCHAIN-AST-10` | Accept equity exchange |
-| `BFT-BFCHAIN-AST-11` | Initiate an asset exchange |
-| `BFT-BFCHAIN-AST-12` | Accept asset exchange |
-| `BFT-BFCHAIN-LNS-00` | Register/Cancel seat name |
-| `BFT-BFCHAIN-LNS-01` | Set the analytic value of the bit name |
-| `BFT-BFCHAIN-LNS-02` | Set the name of the administrator |
-| `BFT-BFCHAIN-CUS-00` | Individual Event | 
+| `BFM-BFMeta-BSE-01` | Set security password |
+| `BFM-BFMeta-BSE-02` | Registered Forger |
+| `BFM-BFMeta-BSE-03` | Governance voting |
+| `BFM-BFMeta-BSE-04` | Set address alias |
+| `BFM-BFMeta-BSE-05` | Receive votes |
+| `BFM-BFMeta-BSE-06` | Decline to vote |
+| `BFM-BFMeta-WOD-00` | Create DAPPID |
+| `BFM-BFMeta-WOD-01` | DAPPID payment |
+| `BFM-BFMeta-EXT-00` | Data Attestation |
+| `BFM-BFMeta-AST-00` | Issuing rights |
+| `BFM-BFMeta-AST-01` | Equity Transfer |
+| `BFM-BFMeta-AST-02` | Destruction of rights and interests |
+| `BFM-BFMeta-AST-03` | Initiate a gift of rights and interests |
+| `BFM-BFMeta-AST-04` | Accept the gift of rights and interests |
+| `BFM-BFMeta-AST-05` | Initiate equity entrustment |
+| `BFM-BFMeta-AST-06` | Sign for entrusted rights |
+| `BFM-BFMeta-AST-07` | Transfer of main interest |
+| `BFM-BFMeta-AST-08` | Main interests moved in |
+| `BFM-BFMeta-AST-09` | Initiate equity exchange |
+| `BFM-BFMeta-AST-10` | Accept equity exchange |
+| `BFM-BFMeta-AST-11` | Initiate an asset exchange |
+| `BFM-BFMeta-AST-12` | Accept asset exchange |
+| `BFM-BFMeta-LNS-00` | Register/Cancel seat name |
+| `BFM-BFMeta-LNS-01` | Set the analytic value of the bit name |
+| `BFM-BFMeta-LNS-02` | Set the name of the administrator |
+| `BFM-BFMeta-CUS-00` | Individual Event | 
 
 ## Node status
 

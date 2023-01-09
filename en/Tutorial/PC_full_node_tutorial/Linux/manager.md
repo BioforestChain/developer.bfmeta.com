@@ -3,7 +3,7 @@
 You can manage nodes in the following two ways:
 
 -Send commands through the command line window for management
--Managed by the BFM node manager provided by the BFChainMeta
+-Managed by the BFM node manager provided by the BFMeta
 
 This chapter only introduces how to manage your nodes through the command line window. If you want to learn how to manage nodes in the BFM Node Manager, please refer to [\<BFM Node Manager Tutorial\>](/en/Tutorial/Node_manager_tutorial/index.md)
 
@@ -24,7 +24,7 @@ By executing the following commands, you can participate in the election of bloc
 
 1. Bind the identity (address) to the BCF node
 
-For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#node-identity-binding)
+For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Linux/authorize.md#node-identity-binding)
 
 > Note: Please ensure that the bound address has enough main chain digital rights to pay the event chain fee.
 
@@ -65,7 +65,7 @@ At this point, your node has started the block forging campaign. Once selected, 
 
 1. Bind the identity (address) to the BCF node
 
-For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#node-identity-binding)
+For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Linux/authorize.md#node-identity-binding)
 
 > Note: Please ensure that the bound address has enough main chain digital rights to pay the event chain fee.
 
@@ -93,13 +93,13 @@ If users need to vote for a trustee with a known address, they can initiate a "v
 
 ## Update node program
 
-Currently, users can only update nodes through the BFChainMeta node manager.
+Currently, users can only update nodes through the BFMeta node manager.
 
 
 
 
 ## Restart the node program
 
-Currently, users can only restart the node through the BFChainMeta node manager.
+Currently, users can only restart the node through the BFMeta node manager.
 
-> Note: After the node restarts, the identity (address) originally bound to the node will be unbound, and the user needs to bind again. For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#node-identity-binding)
+> Note: After the node restarts, the identity (address) originally bound to the node will be unbound, and the user needs to bind again. For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Linux/authorize.md#node-identity-binding)
