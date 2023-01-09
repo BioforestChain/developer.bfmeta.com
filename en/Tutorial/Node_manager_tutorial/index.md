@@ -1,14 +1,14 @@
 ## Introduction
 
-This operation manual mainly describes how to manage all your nodes in the BFChainMeta node manager application. Here, you will learn how to add, delete, manage node trustees and configure node-related parameters, etc.
+This operation manual mainly describes how to manage all your nodes in the BFMeta node manager application. Here, you will learn how to add, delete, manage node trustees and configure node-related parameters, etc.
 
 ## Install the node manager
 
-Download the node manager application installation package from the BFChainMeta developer community https://developer.bfmeta.org. After the download is complete, select the application package and follow the steps to install it. After the installation is successful, skip the boot page and enter.
+Download the node manager application installation package from the BFMeta developer community https://developer.bfmeta.org. After the download is complete, select the application package and follow the steps to install it. After the installation is successful, skip the boot page and enter.
 
 ## Enter the node manager
 
-After downloading and installing, you can directly enter the BFChainMeta node manager without logging in
+After downloading and installing, you can directly enter the BFMeta node manager without logging in
 
 ![4.1](./media/3.0.png.jpg)
 
@@ -133,4 +133,4 @@ Click the [Settings] button in the upper right corner of the node list to enter 
 
 ## Summary
 
-Blockchain technology is constantly developing and improving, and our node manager function is also being continuously optimized. This operation manual is the first official release date, and it will be updated and revised at any time in the future. Please pay attention to the BfchainMeta developer official platform to obtain the latest information.
+Blockchain technology is constantly developing and improving, and our node manager function is also being continuously optimized. This operation manual is the first official release date, and it will be updated and revised at any time in the future. Please pay attention to the BFMeta developer official platform to obtain the latest information.

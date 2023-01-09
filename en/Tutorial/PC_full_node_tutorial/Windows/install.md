@@ -8,9 +8,9 @@ In order to ensure that you can run the BCF node program smoothly, we recommend 
 
 - CPU: 16 cores (main frequency 3.0G+)
 
-- Memory: 32G
+- Memory: 16G
 
-- Hard disk: SSD 2T or above
+- Hard disk: SSD 1T or above
 
 - System: Win10 64-bit and Windows Server2008+ operating system
 
@@ -130,7 +130,7 @@ The user can uninstall the BCF node program of the biological chain forest throu
 
 ### Apply for Genesis Block
 
-After the BCF node program is installed, the default operation is the main chain of the biological chain forest BFChain. If users want to create and run a blockchain of their own, they need to apply to the Biochain Forest team to create a genesis block in the form of email.
+After the BCF node program is installed, the default operation is the main chain of the biological chain forest BFMeta. If users want to create and run a blockchain of their own, they need to apply to the Biochain Forest team to create a genesis block in the form of email.
 
 The email must contain the following information:
 
@@ -145,7 +145,7 @@ The email must contain the following information:
 5. Purpose of the applied-for genesis block: Please describe clearly the purpose of the applied-for genesis block, such as development, testing, production, etc.
 
 
-Send the above information to the email address <license@bfchain.org>.
+Send the above information to the email address <license@bfmeta.org>.
    
 
 After receiving the successful email reply (usually 1-3 working days), please download and copy the `license.json` file in the attachment to the `/genesisInfos` directory under the BCF node program installation directory. Complete the blockchain authorization.
@@ -179,7 +179,7 @@ After the installation is successful, you can find the BCF configuration file in
 
 | **Parameter name**                         | **Parameter description**                                                                            |
 | ------------------------------- | ----------------------------------------------------------------------------------- |
-| chainPort                       | The port number that the node may use, you need to pay attention to avoid the occupied port. Generally speaking, it is recommended to use the 10-digit port number behind the blockchain port for configuration. The bfchain test network blockchain port number here is 19000 |
+| chainPort                       | The port number that the node may use, you need to pay attention to avoid the occupied port. Generally speaking, it is recommended to use the 10-digit port number behind the blockchain port for configuration. The BFMeta test network blockchain port number here is 19000 |
 | \- turnserver | The port of the hole-punching server, the default is 19001, it should be noted that the hole-punching server will use the configured port and the port of the configured port+1, which will occupy 19002 |
 | \- system_websocket_port | Port number occupied by the Websocket interface, default 19003 |
 | \- clusterLock | The port used by the process lock is used internally by the node. The default is 19004 |
@@ -387,7 +387,7 @@ Follow the steps below to switch between the official network and the test netwo
 
 ### Configure the chain that the node runs on
 
-BCF runs the BFChain chain by default, and it also supports switching between different chains. Users can freely switch the chain of current BCF node operation according to actual needs. This step is suitable for users who want to run the genesis block applied for by themselves or the genesis block obtained from outside.
+BCF runs the BFMeta chain by default, and it also supports switching between different chains. Users can freely switch the chain of current BCF node operation according to actual needs. This step is suitable for users who want to run the genesis block applied for by themselves or the genesis block obtained from outside.
 
 Follow the steps below to switch between different chains:
 
@@ -397,7 +397,7 @@ Follow the steps below to switch between different chains:
       
       1. If you want to run your own or external chain, set `isGenesisBlockProvidedExternally` to `true`; at the same time, you need to modify the following parameter values ​​`chainName`, `assetType` and `chainMagic`;
       
-      2. If you want to run the BFChain main chain, set `isGenesisBlockProvidedExternally` to `false`
+      2. If you want to run the BFMeta main chain, set `isGenesisBlockProvidedExternally` to `false`
       
       ![](./media/c5ba8d37739c1a74bf5c1d62e777ee22.png)
 
@@ -406,7 +406,7 @@ The description of each parameter is as follows:
 
 | **Parameter name** | **Parameter description** | **Parameter content description**                                    |
 | ---------------------------------- | ------------- | --------------------------------------------- |
-| `isGenesisBlockProvidedExternally` | Whether to start with your own genesis block | `true`: means to start the node with the specified genesis block `false`: means to start the node with BFChain |
+| `isGenesisBlockProvidedExternally` | Whether to start with your own genesis block | `true`: means to start the node with the specified genesis block `false`: means to start the node with BFMeta |
 | `bnid` | Blockchain network type identifier | `c`: means to start in test network mode `b`: means to start in official network mode |
 | `chainName` | The name of the blockchain to be launched | It needs to be the same as the name of the blockchain to be launched |
 | `chainAssetType` | The name of the main equity of the blockchain to be activated | It needs to be the same as the name of the main equity of the activated blockchain |
@@ -491,7 +491,7 @@ bcf /ba systemSecret="Your node password", delegateSecret="The master password o
 
 - Complete identity binding through node manager
 
-1. Log in to the BFChain mobile app
+1. Log in to the BFMeta mobile app
 2. Enter the node manager
 3. Enter the node IP
 4. Enter the node password
@@ -499,7 +499,7 @@ bcf /ba systemSecret="Your node password", delegateSecret="The master password o
 ![](./media/bindingaddress2.png)
 
 
-When the node completes the above identity binding, it means that your node is connected to the BFChain blockchain network and can directly participate in on-chain governance and block synchronization.
+When the node completes the above identity binding, it means that your node is connected to the BFMeta blockchain network and can directly participate in on-chain governance and block synchronization.
 
 
 > Note 1: For the use of the `ba` interface and its parameters, please refer to [\<Bind node account\>](/en/API_reference/PC_full_node/Interface_list/1-4#9-bind-node-account);

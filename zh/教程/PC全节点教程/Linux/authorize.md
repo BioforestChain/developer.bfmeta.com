@@ -14,7 +14,7 @@
 
 ```
 
-cd /data/bfmeta/    ##执行该命令将路径切至BFChainMeta主目录下##
+cd /data/bfmeta/    ##执行该命令将路径切至BFMeta主目录下##
 
 ./bcf  -ba systemSecret="您的节点密码",delegateSecret="您计划绑定的身份主密码"
 
@@ -31,4 +31,4 @@ cd /data/bfmeta/    ##执行该命令将路径切至BFChainMeta主目录下##
 1. 请参阅 BFM 节点管理器教程以获取更多信息
 
 
-当节点完成以上身份绑定后，就意味着您的节点连上了BFChainMeta区块链网络，可以直接参与链上治理和区块同步。
+当节点完成以上身份绑定后，就意味着您的节点连上了BFMeta区块链网络，可以直接参与链上治理和区块同步。

@@ -138,7 +138,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    chmod u+x /data/upgrade/mongoComponents/linux/mongo*
    chmod u+x /data/upgrade/upgrade
    echo "export BCF_HOME=/data/BFMeta"  >> /etc/profile
-   #生效环境变量
+   #effective environment change
    source  /etc/profile 
    ```
 
@@ -310,9 +310,9 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
 |       | Configuration                                                  | IP           |
 | ----- | ----------------------------------------------------- | ------------ |
-| Node1 | CPU: 16 cores Memory: 32G Bandwidth: 1G SSD: 1T System: centos 7.8 | 172.30.56.61 |
-| Node2 | CPU: 16 cores Memory: 32G Bandwidth: 1G SSD: 1T System: centos 7.8 | 172.30.56.62 |
-| Node3 | CPU: 16 cores Memory: 32G Bandwidth: 1G SSD: 1T System: centos 7.8 | 172.30.56.63 |
+| Node1 | CPU: 16 cores Memory: 16G Bandwidth: 1G SSD: 1T System: centos 7.8 | 172.30.56.61 |
+| Node2 | CPU: 16 cores Memory: 16G Bandwidth: 1G SSD: 1T System: centos 7.8 | 172.30.56.62 |
+| Node3 | CPU: 16 cores Memory: 16G Bandwidth: 1G SSD: 1T System: centos 7.8 | 172.30.56.63 |
 
 
 

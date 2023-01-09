@@ -113,7 +113,7 @@
 
 - 节点程序及升级服务程序安装与配置步骤如下：   
 
-1. 为BFChainMeta创建一个目录
+1. 为BFMeta创建一个目录
 
    ```
    mkdir -p /data
@@ -121,10 +121,10 @@
 
    
 
-2. 上传bfmeta.zip文件(压缩文件内含有BFChainMeta程序及升级服务程序)并解压至/data目录
+2. 上传BFMeta.zip文件(压缩文件内含有BFMeta程序及升级服务程序)并解压至/data目录
 
    ```
-   unzip -o -q /data/release/bfmeta.zip -d /data/
+   unzip -o -q /data/release/BFMeta.zip -d /data/
    
    ```
 
@@ -133,25 +133,25 @@
 3. 授予文件可执行权限
 
    ```
-   chmod u+x /data/bfmeta/bcf
-   chmod u+x /data/bfmeta/mongoComponents/linux/mongo*
-   chmod u+x /data/bfmeta/turnserver/bin/turnserver
+   chmod u+x /data/BFMeta/bcf
+   chmod u+x /data/BFMeta/mongoComponents/linux/mongo*
+   chmod u+x /data/BFMeta/turnserver/bin/turnserver
    chmod u+x /data/upgrade/mongoComponents/linux/mongo*
    chmod u+x /data/upgrade/upgrade
-   echo "export BCF_HOME=/data/bfmeta"  >> /etc/profile
+   echo "export BCF_HOME=/data/BFMeta"  >> /etc/profile
    #生效环境变量
    source  /etc/profile 
    ```
 
    
 
-4. 配置supervisor(管理后台运行bfmeta及升级服务进程)
+4. 配置supervisor(管理后台运行BFMeta及升级服务进程)
 
    ```
    echo -ne "
    	[program:bcf]	
-   	command=/data/bfmeta/bcf  ; 
-   	directory=/data/bfmeta
+   	command=/data/BFMeta/bcf  ; 
+   	directory=/data/BFMeta
    	autostart=true    ; 
    	user=root      ;
    	autorestart=unexpected   ;
@@ -161,7 +161,7 @@
    	redirect_stderr=true ;
    	stdout_logfile_maxbytes=50MB  ;
    	stdout_logfile_backups = 20  ;
-   	stdout_logfile=/data/bfmeta/logs/bcf.log    ;
+   	stdout_logfile=/data/BFMeta/logs/bcf.log    ;
    	stopasgroup=true   ;
    " >> /etc/supervisord.d/bcf.ini
    
@@ -298,7 +298,7 @@
    
 ### 启动服务   
 
-1. 启动BFChainMeta节点程序 - BCF
+1. 启动BFMeta节点程序 - BCF
 
    ```
    systemctl enable supervisord
@@ -325,27 +325,27 @@
 
 > 请确保您的设备已经安装恰当的依赖环境。
 
-1. 创建BFChainMeta目录
+1. 创建BFMeta目录
 
    ```
-   mkdir -p  /data/bfmeta/
+   mkdir -p  /data/BFMeta/
    ```
 
-2. 下载release版的方式获取bfmeta完整安装包（bfmeta.zip）。
+2. 下载release版的方式获取BFMeta完整安装包（BFMeta.zip）。
    
-3. 将bfmeta.zip解压至/data/bfmeta目录
+3. 将BFMeta.zip解压至/data/BFMeta目录
 
    ```
-   unzip -o -q /data/release/bfmeta.zip -d /data/bfmeta
+   unzip -o -q /data/release/BFMeta.zip -d /data/BFMeta
    ```
 
 4. 授予文件可执行权限
 
    ```
-   chmod u+x /data/bfmeta/bcf
-   chmod u+x /data/bfmeta/mongoComponents/linux/mongo*
-   chmod u+x /data/bfmeta/turnserver/bin/turnserver
-   echo "export BCF_HOME=/data/bfmeta"  >> /etc/profile
+   chmod u+x /data/BFMeta/bcf
+   chmod u+x /data/BFMeta/mongoComponents/linux/mongo*
+   chmod u+x /data/BFMeta/turnserver/bin/turnserver
+   echo "export BCF_HOME=/data/BFMeta"  >> /etc/profile
    #生效环境变量
    source  /etc/profile 
    ```
@@ -353,9 +353,9 @@
 5. 配置文件
 
    - 下载创世块
-      向BFChainMeta团队购买创世块，并将文件放入 /data/bfmeta/genesisInfos 目录中
+      向BFMeta团队购买创世块，并将文件放入 /data/BFMeta/genesisInfos 目录中
      
-   - 修改配置文件(/data/bfmeta/conf/base-config.json)
+   - 修改配置文件(/data/BFMeta/conf/base-config.json)
      
      ​	配置外部引入创世块 isGenesisInfoProvideExternally为true 
      ​	配置正式网络或测试网络bnid为b或c 
@@ -364,18 +364,18 @@
      ​	配置所导入的创世块的magic chainMagic
      
    - 配置节点IP
-     修改配置文件/data/bfmeta/conf/bft-config-mainnet.json 中的 peers字段，添加初始连接的ip
+     修改配置文件/data/BFMeta/conf/bft-config-mainnet.json 中的 peers字段，添加初始连接的ip
      
       ![config-peers](./images/config-peers.png)
      
    
-6. 配置supervisor(管理后台运行BFChainMeta进程)
+6. 配置supervisor(管理后台运行BFMeta进程)
 
    ```
    echo -ne "
    	[program:bcf]
-   	command=/data/bfmeta/bcf  ; 
-   	directory=/data/bfmeta
+   	command=/data/BFMeta/bcf  ; 
+   	directory=/data/BFMeta
    	autostart=true    ; 
    	user=root      ;
    	autorestart=unexpected   ;
@@ -385,7 +385,7 @@
    	redirect_stderr=true ;
    	stdout_logfile_maxbytes=50MB  ;
    	stdout_logfile_backups = 20  ;
-   	stdout_logfile=/data/bfmeta/logs/bcf.log    ;
+   	stdout_logfile=/data/BFMeta/logs/bcf.log    ;
    	stopasgroup=true   ;
    " >> /etc/supervisord.d/bcf.ini
    ```
@@ -434,7 +434,7 @@
 
 ### 启动服务   
 
-1. 启动BFChainMeta节点程序 - BCF
+1. 启动BFMeta节点程序 - BCF
 
    ```
    systemctl enable supervisord
