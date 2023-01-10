@@ -5,7 +5,7 @@
 | **Event Type ID** | **Event Type Name** |
 | -------------------- | ---------- |
 | `BFM-BFMeta-BSE-01` | Set security password |
-| `BFT-BFMeta-BSE-02` | Registered Forger |
+| `BFM-BFMeta-BSE-02` | Registered Forger |
 | `BFM-BFMeta-BSE-03` | Governance voting |
 | `BFM-BFMeta-BSE-04` | Set address alias |
 | `BFM-BFMeta-BSE-05` | Receive votes |
