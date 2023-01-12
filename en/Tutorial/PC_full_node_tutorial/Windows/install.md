@@ -145,7 +145,7 @@ The email must contain the following information:
 5. Purpose of the applied-for genesis block: Please describe clearly the purpose of the applied-for genesis block, such as development, testing, production, etc.
 
 
-Send the above information to the email address <license@bfmeta.org>.
+Send the above information to the email address <service@bfmeta.org>.
    
 
 After receiving the successful email reply (usually 1-3 working days), please download and copy the `license.json` file in the attachment to the `/genesisInfos` directory under the BCF node program installation directory. Complete the blockchain authorization.

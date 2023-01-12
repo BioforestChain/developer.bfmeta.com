@@ -92,11 +92,11 @@ bcf /trVote secret="123",fee=500,equity=0,recipientId=address
 
 ## Update node program
 
-Currently, users can only update nodes through the BFChain node manager.
+Currently, users can only update nodes through the BFMeta node manager.
 
 
 ## Restart the node program
 
-Currently, users can only restart the node through the BFChain node manager.
+Currently, users can only restart the node through the BFMeta node manager.
 
 > Note: After the node restarts, the identity (address) originally bound to the node will be unbound, and the user needs to bind again. For details, please refer to [\<Node Identity Binding\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#Node-Identity-Binding)

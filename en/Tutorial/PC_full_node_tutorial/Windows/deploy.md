@@ -50,7 +50,7 @@ To achieve node synchronization between multiple nodes, configure the node synch
 
 > Note 2: The genesis block can be created by a node, then copy the genesis block to the `genesisInfos` folder of the node installation directory, and modify the configuration file according to the above steps to run;
 
-> Note 3: Blockchain authorization is required to run non-BFChain chains. For details, please see \<[Blockchain authorization](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#blockchain-authorization-application)\>.
+> Note 3: Blockchain authorization is required to run non-BFMeta chains. For details, please see \<[Blockchain authorization](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#blockchain-authorization-application)\>.
 
 #### Run
 
@@ -118,10 +118,10 @@ Take the `centos` system as an example to deploy 10 nodes in batches. You need t
       
       ![](./media/46423eebd0cdedb3578a4603ce1ec165.png)
    
-   10. Create the information file `/data/ansible_dir/bfchainnodehosts` for the SSH login of the management server to each node server:
+   10. Create the information file `/data/ansible_dir/BFMetanodehosts` for the SSH login of the management server to each node server:
    
    The meaning of the example is as follows: 
-   | [bfchainnode] | Group name |
+   | [BFMetanode] | Group name |
    |:---------------------------- | -------------------- |
    | `ansible_ssh_port` | SSH login port of the management machine connected to the node |
    | `ansible_ssh_user` | The user name for logging in to the management machine to connect to the node |
@@ -145,29 +145,29 @@ Take the `centos` system as an example to deploy 10 nodes in batches. You need t
    /data/ansible_dir/os_initial/default.hosts
    ```
 
-#### Node server deploys BFChain package
+#### Node server deploys BFMeta package
 
 1. Compress the installed node into a .zip compressed package.
 
-2. Upload the release package BFChain.zip to the management server directory: `/data/release/bfchain.zip`
+2. Upload the release package BFMeta.zip to the management server directory: `/data/release/BFMeta.zip`
 
-3. Distribute the BFChain release package to each node server:
+3. Distribute the BFMeta release package to each node server:
    
    ```
-   ansible bfchainnode -i /data/ansible_dir/bfchainnodehosts -m copy -a
-   "src=/data/release/bfchain.zip dest=/data/release/bfchain.zip"
+   ansible BFMetanode -i /data/ansible_dir/BFMetanodehosts -m copy -a
+   "src=/data/release/BFMeta.zip dest=/data/release/BFMeta.zip"
    ```
 
 4. Run the node server deployment script:
    
    ```python
-   python /data/scripts/cmd.py "sudo sh /data/scripts/update_bfchain.sh"
+   python /data/scripts/cmd.py "sudo sh /data/scripts/update_BFMeta.sh"
    ```
 
 5. Start nodes in batches
    
    ```
-   ansible bfchainnode -m shell -i /data/ansible_dir/bfchainnodehosts -a
+   ansible BFMetanode -m shell -i /data/ansible_dir/BFMetanodehosts -a
    'systemctl start supervisord '
    ```
 
@@ -176,7 +176,7 @@ Take the `centos` system as an example to deploy 10 nodes in batches. You need t
 Execute `command` commands in batches on nodes by calling `ansible`. as follows:
 
 ```
-ansible bfchainnode -m shell -i /data/ansible_dir/bfchainnodehosts -a'command'
+ansible BFMetanode -m shell -i /data/ansible_dir/BFMetanodehosts -a'command'
 ```
 
 > Note: `command` is the command to be executed
@@ -185,9 +185,9 @@ For example, if you execute `–glb` in batches, you can get it by entering the 
 
 ### Multi-chain deployment
 
-If the user wants to deploy multiple chains of the Biochain Forest Data Center version on a certain node, for example, if the user wants to deploy BFChain and another chain, FINChain, they can follow the steps below:
+If the user wants to deploy multiple chains of the Biochain Forest Data Center version on a certain node, for example, if the user wants to deploy BFMeta and another chain, FINChain, they can follow the steps below:
 
-1. The user downloads and installs the Biological Chain Forest data center version (BCF), and modifies the configuration file according to the above \<[single-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> method, and deploys after startup BFChain succeeded.
+1. The user downloads and installs the Biological Chain Forest data center version (BCF), and modifies the configuration file according to the above \<[single-node deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> method, and deploys after startup BFMeta succeeded.
 
 2. According to \<[Configure the chain that the node runs](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configure-the-chain-that-the-node-runs)\>, switch to the creation block operation of FINChain, and check the corresponding configuration file. Configuration file path: `/installation directory/conf/"chain name"-config-"network type".json`.
    
@@ -199,13 +199,13 @@ If the user wants to deploy multiple chains of the Biochain Forest Data Center v
 
 ### Public chain deployment
 
-1. If you want to run the official network of BFChain public chain nodes, follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> and set the configuration file `/installation directory/conf/ Parameters in base-config.json`:
+1. If you want to run the official network of BFMeta public chain nodes, follow the steps of \<[Single Node Deployment](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#single-node-deployment)\> and set the configuration file `/installation directory/conf/ Parameters in base-config.json`:
    
    1. "`isGenesisBlockProvidedExternally`" is set to `false`
    
    2. "`bnid`" is set to `b`
 
-2. If you want to run the test network of BFChain public chain nodes, then
+2. If you want to run the test network of BFMeta public chain nodes, then
    
    1. "`isGenesisBlockProvidedExternally`" is set to `false`
    
@@ -243,7 +243,7 @@ For details, please refer to [\<Bind Address\>](/en/Tutorials/PC_full_node_tutor
 
 1. Refer to \<[node server environment preparation](/en/Tutorials/PC_full_node_tutorial/Windows/deploy.md#node-server-environment-preparation)\>, upload the bandkeyhosts file to /data/ansible_dir/bandkeyhosts of the management server and configure the corresponding values ​​according to the following table . 
 
-| bfchainnode001                              | Alias |
+| BFMetanode001                              | Alias |
 | ------------------------------------------- | ---------------------- |
 | `ansible_ssh_port=18899` | Node login ssh port number |
 | `ansible_ssh_host=192.168.0.1` | Intranet ip that the node can log in to with SSH |
@@ -257,7 +257,7 @@ For details, please refer to [\<Bind Address\>](/en/Tutorials/PC_full_node_tutor
 2. Enter the following commands in the management machine to bind trustees in batches:
    ```shell
     ansible bandnode -i /data/ansible_dir/bandkeyhosts -m shell -a "cd
-    /data/bfchain; ./bcf --bindingAccount
+    /data/BFMeta; ./bcf --bindingAccount
    
     systemSecret=\\"your node password \\",delegateSecret=\\"{{secretkey}}\\" "
    ```

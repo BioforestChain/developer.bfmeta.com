@@ -248,7 +248,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
      c) The open port of the cloud server with a specific back-end tag (such as BFMeta node) allows all ip addresses to access:
      ![gcp-fw-limitsource-allsrc](./images/gcp-fw-limitsource-allsrc.png)
 
-     d) The open port of the cloud server with a specific back-end tag (such as bfchainnode) allows access to the characteristic ip address (such as 1.1.1.1):
+     d) The open port of the cloud server with a specific back-end tag (such as bfmetanode) allows access to the characteristic ip address (such as 1.1.1.1):
 
      ![gcp-fw-limitsource-limitsrc](./images/gcp-fw-limitsource-limitsrc.png)
      
@@ -321,13 +321,13 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
 > Please make sure that your device has installed the appropriate dependent environment.
 
-1. Create bfchain directory
+1. Create BFMeta directory
 
    ```
    mkdir -p /data/BFMeta/
    ```
 
-2. Download the release version to obtain the complete bfchain installation package (BFMeta.zip).
+2. Download the release version to obtain the complete BFMeta installation package (BFMeta.zip).
    
 3. Unzip BFMeta.zip to the /data/BFMeta directory
 
@@ -349,7 +349,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 5. Configuration file
 
    - Download genesis block
-      Purchase the genesis block from the bfchain team and put the files in the /data/BFMeta/genesisInfos directory
+      Purchase the genesis block from the BFMeta team and put the files in the /data/BFMeta/genesisInfos directory
      
    - Modify the configuration file (/data/BFMeta/conf/base-config.json)
      
@@ -365,7 +365,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
       ![config-peers](./images/config-peers.png)
      
    
-6. Configure supervisor (manage the bfchain process running in the background)
+6. Configure supervisor (manage the BFMeta process running in the background)
 
    ```
    echo -ne "
