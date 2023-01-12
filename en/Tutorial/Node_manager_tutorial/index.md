@@ -10,7 +10,7 @@ Download the node manager application installation package from the BFMeta devel
 
 After downloading and installing, you can directly enter the BFMeta node manager without logging in
 
-![4.1](./media/3.0.png.jpg)
+![4.1](./media/3.0.png)
 
 ## Node management
 
