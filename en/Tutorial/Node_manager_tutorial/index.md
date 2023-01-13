@@ -10,7 +10,7 @@ Download the node manager app installation package from BFMeta developer communi
 
 After the installation, you can directly enter the node manager without logging in.
 
-![4.1](media/3.0.png)
+![4.1](./media/3.0.png)
 
 
 ## Node management
@@ -25,13 +25,13 @@ After the verification succeeds, you can check the information related to the no
 - If a trustee has been bound to the node, you need to fill in the trustee key to add the node.
 - If no trustee has been bound, the node can be added directly. Nodes can also be added after the trustee is bound in this process.
 - If the identity you select is the administrator, check whether the node has been set the <Administrator Password Settings>. If the administrator password has been set, the node can be added after the password is successfully verified. Otherwise, the node cannot be added.
-   ![4.1](media/4.1.png)
+   ![4.1](./media/4.1.png)
 
 ### Delete node
 
 Select the desired node to delete, press and hold to slide to the left and the <Delete> button appears, click the button to delete.
 
-![4.1](media/4.2.jpg)
+![4.1](./media/4.2.jpg)
 
 
 ### View node details
@@ -48,7 +48,7 @@ Select the node you want to check and click it to enter the node details. You ca
 - Network node traffic consumption: request node IP, number of requests, number of request failures, request data size
 - List of created blocks: block creation time, number of rewarded rights and interests obtained, block height, block size, transaction volume of this block
 - Node operation log: node operation log classification, log quantity, log size, log generation time and view log details.
-  ![4.2](media/4.3.png)
+  ![4.2](./media/4.3.png)
 
 ### Trustee Binding
 
@@ -56,21 +56,21 @@ If you want to bind trustee, click the icon on the top right of the node informa
 
 - If the node has been bound to a trustee, the address of the bound trustee will be displayed.
 - If the node is not bound to a trustee, you can enter the trustee key to add the trustee.
-   ![4.2](media/4.4.png)
+   ![4.2](./media/4.4.png)
 
 ### Trustee Security Password Settings
 
 When you need to manage node password, click the icon on the top right of the node details page to enter the node settings page, and then select<Security Password Settings>to conduct management. Enter the identity private key verification associated with the node, and then enter the private key of the associated identity, then the security password of the trustee address can be set.
 
 * Note: The node password can only be set when the role is the mine owner. *
-![4.2](media/4.5.png)
+![4.2](./media/4.5.png)
 
 
 ### Node Password Settings
 
 When you want to manage node password, click the icon on the top right of the node details page to enter the node settings page, and then select “node password setting”.  Enter the old password of the node, and then enter the same new password twice, the node password can be modified.
 * Note: The node password can only be set when the role is the miner. 
-![4.2](media/4.6.png)
+![4.2](./media/4.6.png)
 
 
 ### Node administrator password setting
@@ -78,7 +78,7 @@ When you want to manage node password, click the icon on the top right of the no
 When the role that node log in is miner, node administrator password can be set. After the node administrator password is verified, the administrator can help manage the node.
 Click the icon on the top right of the node details page to enter the node settings page. Click <Administrator Password Settings>  to conduct management.
 
-![4.2](media/4.7.png)
+![4.2](./media/4.7.png)
 
 ### Node parameter configuration
 
@@ -96,19 +96,19 @@ Set the upper limit of visits in node interface and traffic.
 6. Disk configuration: set the cycle of cleaning the disk and the critical value of disk storage space.
 7. Process configuration: set the maximum number of relevant concurrency.
 8. Port configuration: view the details of port configuration.
-    ![4.2](media/4.8.png)
+    ![4.2](./media/4.8.png)
 
 ### Node pool management
 
 Click the <Node Pool Management> on the node settings page to set the whitelist of connected nodes.
-![4.2](media/4.9.png)
+![4.2](./media/4.9.png)
 
 
 ### Restart the node
 
 If you need to restart the node, click <Restart node> on the node settings page, and then click <confirm>button in the prompt box to restart the node. It should be noted that blocking and voting will be suspended in the process of restarting.
 
-![4.2](media/4.12.png)
+![4.2](./media/4.12.png)
 
 ### Node update
 
@@ -120,17 +120,17 @@ Please rebind the trustee after the update has been completed, or the block cann
 ### Node shutdown
 
 When you need to close node, click  <Node Shutdown>on the node settings page, and click <Confirm> the pop-up dialog box to close the node.
-![4.2](media/4.13.png)
+![4.2](./media/4.13.png)
 
 ### Application Language Settings
 
 Click the <Settings> button on the top right of the node list. Click <Language selection>to select language. After selecting the language you want and returning, restart can change the language.
-![4.2](media/4.15.png)
+![4.2](./media/4.15.png)
 
 ### Application update
 
 Click the <Settings>button on the top right of thr node list to enter Settings page. Click Version Management. If a new version is displayed, click 《version management>, and follow the prompts to download the installation package, and then follow the prompts to update the application.
-![4.2](media/4.17.png)
+![4.2](./media/4.17.png)
 
 ## Summary
 
