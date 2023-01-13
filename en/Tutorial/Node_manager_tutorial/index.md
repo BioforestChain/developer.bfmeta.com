@@ -1,41 +1,42 @@
 ## Introduction
 
-This operation manual mainly describes how to manage all your nodes in the BFMeta node manager application. Here, you will learn how to add, delete, manage node trustees and configure node-related parameters, etc.
+This manual describes how to manage all of your nodes through the node Manager. Here, you'll learn how to add, remove and manage node trustees, and configure node parameters, etc.
 
 ## Install the node manager
 
-Download the node manager application installation package from the BFMeta developer community https://developer.bfmeta.org. After the download is complete, select the application package and follow the steps to install it. After the installation is successful, skip the boot page and enter.
+Download the node manager app installation package from BFMeta developer community https://developer.bfmeta.org/. After downloading, select the application package and install it according to the steps. After successful installation, skip the boot page to enter.
 
 ## Enter the node manager
 
-After downloading and installing, you can directly enter the BFMeta node manager without logging in
+After the installation, you can directly enter the node manager without logging in.
 
-![4.1](./media/3.0.png)
+![4.1](media/3.0.png)
+
 
 ## Node management
 
 ### Adding Nodes
 
-Users can manually add nodes. When adding, you need to verify the node password. At the same time, if the node is bound to the trustee, the trustee key needs to be injected. If the node is not bound to the trustee, the trustee information can be injected after adding the node.
+Click the<Add External Node>button, and then click the<Manually Configure Node>button at the bottom of the Add Node page, fill in the node IP in the pop-up window, and select the node management identity.
 
-Click the <Add external node button>, click the bottom <Manual configuration node> button on the add node page, fill in the node IP in the pop-up window, and select the node management identity.
+- If the identity you select is the owner, verifying the node password is required.
+After the verification succeeds, you can check the information related to the node and determine whether the node is bound to a trustee.
 
-- If the identity is not the host, you need to verify the node password.
-   After the verification is passed, you can view the relevant information of the node and determine whether the node has been bound to the trustee.
-- If the trustee has been bound, you need to fill in the trustee's secret key to complete the node addition.
-- If no trustee is bound, you can add it yourself. Node addition can also be done after adding trustees in this process.
-- If you select the identity as an administrator, you need to judge whether the node has set <administrator password setting>, - if the administrator password is verified successfully, the addition is successful, otherwise the addition fails.
-   ![4.1](./media/4.1.png)
+- If a trustee has been bound to the node, you need to fill in the trustee key to add the node.
+- If no trustee has been bound, the node can be added directly. Nodes can also be added after the trustee is bound in this process.
+- If the identity you select is the administrator, check whether the node has been set the <Administrator Password Settings>. If the administrator password has been set, the node can be added after the password is successfully verified. Otherwise, the node cannot be added.
+   ![4.1](media/4.1.png)
 
 ### Delete node
 
 Select the desired node to delete, press and hold to slide to the left and the <Delete> button appears, click the button to delete.
 
-![4.1](./media/4.2.jpg)
+![4.1](media/4.2.jpg)
+
 
 ### View node details
 
-Select the node to be viewed, and click the node to enter the node details. You can see the following information:
+Select the node you want to check and click it to enter the node details. You can see the following information:
 
 - Node CPU usage
 - The number of nodes that have participated in the consensus (number of blocks)
@@ -47,90 +48,90 @@ Select the node to be viewed, and click the node to enter the node details. You 
 - Network node traffic consumption: request node IP, number of requests, number of request failures, request data size
 - List of created blocks: block creation time, number of rewarded rights and interests obtained, block height, block size, transaction volume of this block
 - Node operation log: node operation log classification, log quantity, log size, log generation time and view log details.
-  ![4.2](./media/4.3.png)
+  ![4.2](media/4.3.png)
 
 ### Trustee Binding
 
-When you need to bind a trustee, click the icon at the top right of the node details page to enter the node settings page, and select <Bind Trustee> to manage.
+If you want to bind trustee, click the icon on the top right of the node information page to enter the node setting page, and then click<Without binding truste>to conduct management.
 
 - If the node has been bound to a trustee, the address of the bound trustee will be displayed.
 - If the node is not bound to a trustee, you can enter the trustee key to add the trustee.
-   ![4.2](./media/4.4.png)
+   ![4.2](media/4.4.png)
 
 ### Trustee Security Password Settings
 
-When you need to manage node passwords, click the icon at the top right of the node details page to enter the node settings page, and select <Security Password Settings> to manage. Enter the identity private key associated with the node for verification, and then enter the node identity security password to set the trustee's address security password.
+When you need to manage node password, click the icon on the top right of the node details page to enter the node settings page, and then select<Security Password Settings>to conduct management. Enter the identity private key verification associated with the node, and then enter the private key of the associated identity, then the security password of the trustee address can be set.
 
-*Note: The node password can only be set when the role is the mine owner. *
-![4.2](./media/4.5.png)
+* Note: The node password can only be set when the role is the mine owner. *
+![4.2](media/4.5.png)
+
 
 ### Node Password Settings
 
-When you need to manage node passwords, click the icon at the top right of the node details page to enter the node settings page, and select <Node Password Settings> to manage. Enter the old password verification of the node, and enter the same new password twice. Then the node password can be modified.
-*Note: The node password can only be set when the role is the mine owner. *
-![4.2](./media/4.6.png)
+When you want to manage node password, click the icon on the top right of the node details page to enter the node settings page, and then select “node password setting”.  Enter the old password of the node, and then enter the same new password twice, the node password can be modified.
+* Note: The node password can only be set when the role is the miner. 
+![4.2](media/4.6.png)
+
 
 ### Node administrator password setting
 
-When the role of the node login is the mine owner, the node administrator password can be set. Only by verifying that the node administrator password is passed, the administrator can assist in managing the node.
-Click the icon at the top right of the node details page to enter the node settings page, and click <Administrator Password Settings> for management.
-![4.2](./media/4.7.png)
+When the role that node log in is miner, node administrator password can be set. After the node administrator password is verified, the administrator can help manage the node.
+Click the icon on the top right of the node details page to enter the node settings page. Click <Administrator Password Settings>  to conduct management.
+
+![4.2](media/4.7.png)
 
 ### Node parameter configuration
 
-When the user needs to modify the node parameters, click the <Node Parameter Configuration> button on the node setting page to enter the node parameter management page. The following are the configurable parameters of the node.
+When users need to modify node parameters, click <Node parameter setting>to enter the node parameter management page. The following is the parameters node can be configured.
 
-1. Node startup configuration: The node must enable block building, otherwise it will not be able to obtain benefits. The key point retention round starts, which means: the blockchain will create a key checkpoint at the end of each round, and then the data can be quickly started or rolled back according to the checkpoint. This configuration determines the number of key checkpoints retained.
+1. Node launch configuration: node must enable blocking, or the equity cannot be obtained. Enable key point retention rounds, which means that the blockchain will create a key checkpoint at the end of each round, and the data can be quickly started or rolled back later according to the checkpoint. This configuration determines the number of key checkpoint retention.
 2. Access configuration:
-    Set the upper limit of the number of visits, the upper limit of traffic, etc. within the node interface cycle.
+Set the upper limit of visits in node interface and traffic.
 3. Network configuration:
     Whether to enable grpc.
 4. Log configuration:
-    Set the level of log storage, the upper limit size of a single log file, the upper limit of log storage splits, the cleaning cycle, etc.
+    Set the level of log storage, maximum size of single log file, Maximum number of log storage partitions, clearing cycle, etc.
 5. Event configuration:
-    Set the relevant handling fee of the event, the number of node transactions, the upper limit of the number of events, etc. You can also set the selection criteria for voters during automatic voting.
+    Set the fee related to event, the number of node transactions, the maximum number of events, etc. You can also set the requisition for voters during automatic voting.
 6. Disk configuration: set the cycle of cleaning the disk and the critical value of disk storage space.
-7. Process configuration: set the upper limit of the concurrent number of related processes.
-8. Port configuration: Check the port configuration.
-    ![4.2](./media/4.8.png)
+7. Process configuration: set the maximum number of relevant concurrency.
+8. Port configuration: view the details of port configuration.
+    ![4.2](media/4.8.png)
 
 ### Node pool management
 
-Click <Node Pool Management> from the node setting page to set the whitelist of connected nodes.
-![4.2](./media/4.9.png)
+Click the <Node Pool Management> on the node settings page to set the whitelist of connected nodes.
+![4.2](media/4.9.png)
 
-### Notification email settings
-
-Click <Mailbox Configuration> on the node settings page to configure the mailbox to receive email reminders from the system such as insufficient memory and CPU usage exceeding the limit.
-![4.2](./media/4.10.png)
 
 ### Restart the node
 
-When you need to restart the node, click <Restart Node> on the node setting page, and select the <Confirm> button in the prompt box to restart. In particular, it should be noted that block making and voting will be suspended during the restart process.
-![4.2](./media/4.12.png)
+If you need to restart the node, click <Restart node> on the node settings page, and then click <confirm>button in the prompt box to restart the node. It should be noted that blocking and voting will be suspended in the process of restarting.
+
+![4.2](media/4.12.png)
 
 ### Node update
 
-When you need to upgrade a node, click <Node Update> on the node settings page, the system will detect the upgrade package, and if there is an upgradeable package, it will be displayed directly. If the upgrade package has not been downloaded, click the <Download Now> button on the page, and then click the <Immediate> Upgrade button on the page after downloading. Next, please wait patiently for the upgrade, and you can exit the page during the upgrade process. After the upgrade is complete, re-enter the system.
-
-*Note: Nodes will stop voting and block building during the upgrade process. Please choose the right time to upgrade.
-After the upgrade is successful, please re-bind the trustee, otherwise the block cannot be synchronized. *
+When you need to update node, click <Node update> on the node setting page. The system will detect the update package. If there is an update package, it will be displayed directly. If the update package has not downloaded yet, click the <Download now>button, and then click the  <Update now> button after downloading. Next, please wait patiently for the update. You can exit the page during the updating and re-enter the system after the update has been completed.
+Note:
+* Nodes will stop voting and blocking in the process of updating. Please select the appropriate time to update.
+Please rebind the trustee after the update has been completed, or the block cannot be synchronized.
 
 ### Node shutdown
 
-When you need to shut down the node, click <Node Shutdown> on the node setting page, and click the <Confirm> button on the pop-up prompt page to shut down the node.
-![4.2](./media/4.13.png)
+When you need to close node, click  <Node Shutdown>on the node settings page, and click <Confirm> the pop-up dialog box to close the node.
+![4.2](media/4.13.png)
 
 ### Application Language Settings
 
-Click the [Settings] button in the upper right corner of the node list to enter the setting page. Click [Language Settings] to enter the language selection page, select the desired language and return, then restart to complete the language switching.
-![4.2](./media/4.15.png)
+Click the <Settings> button on the top right of the node list. Click <Language selection>to select language. After selecting the language you want and returning, restart can change the language.
+![4.2](media/4.15.png)
 
 ### Application update
 
-Click the [Settings] button in the upper right corner of the node list to enter the setting page. Click [Version Management] and if there is a new version, follow the prompts to download the installation package, and then follow the prompts to install to update the application.
-![4.2](./media/4.17.png)
+Click the <Settings>button on the top right of thr node list to enter Settings page. Click Version Management. If a new version is displayed, click 《version management>, and follow the prompts to download the installation package, and then follow the prompts to update the application.
+![4.2](media/4.17.png)
 
 ## Summary
 
-Blockchain technology is constantly developing and improving, and our node manager function is also being continuously optimized. This operation manual is the first official release date, and it will be updated and revised at any time in the future. Please pay attention to the BFMeta developer official platform to obtain the latest information.
+Blockchain technology is constantly developing and improving, and the functions of our node manager is also continuously improving. This operation manual is the version released on the first official release date. It will be updated and revised at any time in the future. Please pay attention to the official platform of BFMeta developers for the latest information.
