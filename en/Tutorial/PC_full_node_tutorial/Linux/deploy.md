@@ -132,12 +132,12 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 3. Grant executable permissions to the file
 
    ```
-   chmod u+x /data/BFMeta/bcf
-   chmod u+x /data/BFMeta/mongoComponents/linux/mongo*
-   chmod u+x /data/BFMeta/turnserver/bin/turnserver
+   chmod u+x /data/bfmchain/bcf
+   chmod u+x /data/bfmchain/mongoComponents/linux/mongo*
+   chmod u+x /data/bfmchain/turnserver/bin/turnserver
    chmod u+x /data/upgrade/mongoComponents/linux/mongo*
    chmod u+x /data/upgrade/upgrade
-   echo "export BCF_HOME=/data/BFMeta"  >> /etc/profile
+   echo "export BCF_HOME=/data/bfmchain"  >> /etc/profile
    #effective environment change
    source  /etc/profile 
    ```
@@ -190,17 +190,17 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    
    ```
    Allow all external ip access:
-    firewall-cmd --add-port=9000/tcp --add-port=9001/tcp --add-port=9002/tcp --add-port=9003/tcp --add-port=9005/tcp - add-port=9007/tcp --add-port=9009/tcp --add-port=9011/tcp --permanent
+    firewall-cmd --add-port=22000/tcp --add-port=22001/tcp --add-port=22002/tcp --add-port=22003/tcp --add-port=22005/tcp - add-port=22007/tcp --add-port=22009/tcp --add-port=220011/tcp --permanent
    
     Allow external ip (such as 1.1.1.1/32) to access:
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9000" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9001" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9002" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9003" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9005" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9007" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="9011" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22000" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22001" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22002" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22003" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22005" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22007" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22009" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="220011" protocol="tcp" accept"
    
    ```
    
@@ -208,10 +208,10 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    
    ```
    Allow all external ip access:
-    iptables -A INPUT -p tcp -m multiport --dport 9000:9003,9005,9007,9009,9011 -m state --state NEW,ESTABLISHED -j ACCEPT
+    iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009,220011 -m state --state NEW,ESTABLISHED -j ACCEPT
    
    Allow external ip (such as 1.1.1.1/32) to access:
-   iptables -A INPUT -p tcp -m multiport --dport 9000:9003,9005,9007,9009,9011 -m state --state NEW,ESTABLISHED -s 1.1.1.1/32  -j ACCEPT
+   iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009,220011 -m state --state NEW,ESTABLISHED -s 1.1.1.1/32  -j ACCEPT
    
    ```
 2. Cloud platform fire protection strategy
@@ -235,7 +235,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
      You can enter 0.0.0.0/0 to allow all ip address access traffic to pass, or you can enter a specific IP address to restrict access to only that ip address (the CIDR notation must be used).
      11. Keep the default value of none for the secondary source filter condition.
      12. For the protocol and port, please select the specified protocol and port, and then:
-     Check the tcp checkbox and enter 9000,9001,9002,9003,9005,9007,9009,9011 in the associated field.
+     Check the tcp checkbox and enter 22000,22001,22002,22003,22005,22007,22009,220011 in the associated field.
      13. Choose Create.
      ```
 
@@ -261,13 +261,14 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
      1. Click on the instance details that need to be configured "Security"-"Security Group":
         ![AWS1](./images/AWS1.png)
+        ![AWS2](./images/AWS2.png)
 
      2. Then click "Edit Security Group Rules" in the pop-up security group:
-        ![AWS2](./images/AWS2.png)
+        ![AWS2](./images/AWS3.png)
 
      3. Add inbound rules:
 
-        ![AWS3](./images/AWS3.png)
+        ![AWS3](./images/AWS4.png)
 
      
 
@@ -394,37 +395,37 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    FIREWALLD:
 
    ```
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9000" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9001" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9002" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9003" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9005" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9007" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="9011" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9000" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9001" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9002" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9003" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9005" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9007" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="9011" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9000" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9001" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9002" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9003" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9005" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9007" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="9011" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22000" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22001" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22002" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22003" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22005" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22007" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22009" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="220011" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22000" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22001" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22002" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22003" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22005" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22007" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22009" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="220011" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22000" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22001" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22002" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22003" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22005" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22007" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22009" protocol="tcp" accept"
+   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="220011" protocol="tcp" accept"
    
    ```
 
    iptables:
 
    ```
-   iptables -A INPUT -p tcp -m multiport --dport 9000:9003,9005,9007,9009,9011 -m state --state NEW,ESTABLISHED -s 172.30.56.61,172.30.56.62,172.30.56.63  -j ACCEPT
+   iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009,220011 -m state --state NEW,ESTABLISHED -s 172.30.56.61,172.30.56.62,172.30.56.63  -j ACCEPT
    ```
 
 
