@@ -261,14 +261,13 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
      1. Click on the instance details that need to be configured "Security"-"Security Group":
         ![AWS1](./images/AWS1.png)
-        ![AWS2](./images/AWS2.png)
 
      2. Then click "Edit Security Group Rules" in the pop-up security group:
-        ![AWS2](./images/AWS3.png)
+        ![AWS2](./images/AWS2.png)
 
      3. Add inbound rules:
 
-        ![AWS3](./images/AWS4.png)
+        ![AWS3](./images/AWS3.png)
 
      
 
