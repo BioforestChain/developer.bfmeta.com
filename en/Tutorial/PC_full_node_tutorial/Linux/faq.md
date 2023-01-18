@@ -75,7 +75,7 @@ Automatic voting parameter description
 
 ### Use of Port
 
-1. TCP: Each chain uses a blockchain port by default. For BCF, the official network is 9000 and the test network is 19000. In addition, in order for the program to run normally, it is recommended to reserve the last ten ports of this port for use, such as 19000-19010. Open the configuration file of the chain that needs to be run. There are port configurations at the top of the file. If these ports conflict with other programs that the current node has started, you can configure them yourself. For details, please refer to the port configuration of [\<Configuration file description\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configuration-file-description).
+1. TCP: Each chain uses a blockchain port by default. For BCF, the official network is 22000 and the test network is 19000. In addition, in order for the program to run normally, it is recommended to reserve the last ten ports of this port for use, such as 19000-19010. Open the configuration file of the chain that needs to be run. There are port configurations at the top of the file. If these ports conflict with other programs that the current node has started, you can configure them yourself. For details, please refer to the port configuration of [\<Configuration file description\>](/en/Tutorials/PC_full_node_tutorial/Windows/install.md#configuration-file-description).
 
 2. UDP: Due to the existence of `stunserver`, udp ports of 49152-65535 need to be configured.
 
@@ -87,9 +87,9 @@ The following explains how to configure the ports that are open to the outside w
 
 Use the `firewalld` that comes with `Centos7` for firewall configuration:
 
-1. Open the tcp port of 9000-9007:
+1. Open the tcp port of 22000-22007:
    ```shell
-    firewall-cmd --permanent --zone=public --add-port=9000-9007/tcp
+    firewall-cmd --permanent --zone=public --add-port=22000-22007/tcp
    ```
 
 2. Open the udp port of 49152-65535:
