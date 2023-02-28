@@ -18,6 +18,8 @@ The node password can be modified by executing the following command:
 
 > Note: After installing the BCF node program, it is strongly recommended that you change the node password first.
 
+> Note: The initial password of the BFMeta full node is "nP3ct8Ejv".
+
 ## Mining block
 
 By executing the following commands, you can participate in the election of block Miners, and you will be selected as a Miner.

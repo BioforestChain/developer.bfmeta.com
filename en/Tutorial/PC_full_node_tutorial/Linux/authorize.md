@@ -24,13 +24,16 @@ cd /data/bfmeta/
 
 > Note: In the above command, the content of double quotes needs to be replaced with the corresponding content
 
+> Note: The initial password of the BFMeta full node is "nP3ct8Ejv".
+
+
 4. When the node program-BCF interface gives the bound identity (address) information, it means that the node's identity (address) is successfully bound, as shown in the following figure:
 ![bindingaddress1](./images/bindingaddress1.png)
 
 
 - Complete identity binding through node manager
 
-1. Please refer to the BFM Node Manager Tutorial to get more information.
+1. Please refer to the [BFM Node Manager Tutorial](https://developer.bfmeta.org/514/node-manager-tutorial/) to get more information.
 
 
 
