@@ -44,7 +44,7 @@
 
 用户如果想要变更在`logs`下日志文件所显示的日志等级，可以在节点设置日志等级，具体步骤如下：
 
-1. 在启动BCF.exe前修改配置文件，配置文件路径：`/安装目录/conf/bft-config-testnet.json`。修改参数`consoleLogLevel`与`fileLogLevel`都可以实现调整控制台输出与文件输出的日志模式的功能。
+1. 在启动BCF.exe前修改配置文件，配置文件路径：`/安装目录/conf/bfm-config-testnet.json`。修改参数`consoleLogLevel`与`fileLogLevel`都可以实现调整控制台输出与文件输出的日志模式的功能。
 
 ![](./media/a0ae6c0dcba517acbe81f4db51d81bd1.png)
 
@@ -66,9 +66,9 @@
    
     修改配置文件，配置文件路径：`/安装目录/conf/`
    
-   1. 正式网络配置文件\`bft-config-mainnet.json\`
+   1. 正式网络配置文件\`bfm-config-mainnet.json\`
    
-   2. 测试网络配置文件`bft-config-testnet.json\`
+   2. 测试网络配置文件`bfm-config-testnet.json\`
       
        修改`enable`配置为`true`，保存之后运行即可以实现自动投票功能。
       

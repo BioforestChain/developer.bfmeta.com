@@ -190,7 +190,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    
    ```
    Allow all external ip access:
-    firewall-cmd --add-port=22000/tcp --add-port=22001/tcp --add-port=22002/tcp --add-port=22003/tcp --add-port=22005/tcp - add-port=22007/tcp --add-port=22009/tcp --add-port=220011/tcp --permanent
+    firewall-cmd --add-port=22000/tcp --add-port=22001/tcp --add-port=22002/tcp --add-port=22003/tcp --add-port=22005/tcp - add-port=22007/tcp --add-port=22009/tcp --permanent
    
     Allow external ip (such as 1.1.1.1/32) to access:
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22000" protocol="tcp" accept"
@@ -200,7 +200,6 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22005" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22007" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="220011" protocol="tcp" accept"
    
    ```
    
@@ -208,10 +207,10 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    
    ```
    Allow all external ip access:
-    iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009,220011 -m state --state NEW,ESTABLISHED -j ACCEPT
+    iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009 -m state --state NEW,ESTABLISHED -j ACCEPT
    
    Allow external ip (such as 1.1.1.1/32) to access:
-   iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009,220011 -m state --state NEW,ESTABLISHED -s 1.1.1.1/32  -j ACCEPT
+   iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009 -m state --state NEW,ESTABLISHED -s 1.1.1.1/32  -j ACCEPT
    
    ```
 2. Cloud platform fire protection strategy
@@ -235,7 +234,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
      You can enter 0.0.0.0/0 to allow all ip address access traffic to pass, or you can enter a specific IP address to restrict access to only that ip address (the CIDR notation must be used).
      11. Keep the default value of none for the secondary source filter condition.
      12. For the protocol and port, please select the specified protocol and port, and then:
-     Check the tcp checkbox and enter 22000,22001,22002,22003,22005,22007,22009,220011 in the associated field.
+     Check the tcp checkbox and enter 22000,22001,22002,22003,22005,22007,22009 in the associated field.
      13. Choose Create.
      ```
 
@@ -349,9 +348,9 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 5. Configuration file
 
    - Download genesis block
-      Purchase the genesis block from the BFMeta team and put the files in the /data/BFMeta/genesisInfos directory
+      Purchase the genesis block from the BFMeta team and put the files in the /data/bfmchain/genesisInfos directory
      
-   - Modify the configuration file (/data/BFMeta/conf/base-config.json)
+   - Modify the configuration file (/data/bfmchain/conf/base-config.json)
      
       Configure the externally introduced genesis block isGenesisInfoProvideExternally to true
      ​ Configure the official network or test network bnid as b or c
@@ -360,7 +359,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
      ​ Configure the magic chainMagic of the imported genesis block
      
    - Configure node IP
-     Modify the peers field in the configuration file /data/BFMeta/conf/bft-config-mainnet.json and add the ip of the initial connection
+     Modify the peers field in the configuration file /data/bfmchain/conf/bfm-config-mainnet.json and add the ip of the initial connection
      
       ![config-peers](./images/config-peers.png)
      
@@ -401,7 +400,6 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22005" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22007" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="22009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.61" port port="220011" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22000" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22001" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22002" protocol="tcp" accept"
@@ -409,7 +407,6 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22005" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22007" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="22009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.62" port port="220011" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22000" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22001" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22002" protocol="tcp" accept"
@@ -417,14 +414,13 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22005" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22007" protocol="tcp" accept"
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="22009" protocol="tcp" accept"
-   firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="172.30.56.63" port port="220011" protocol="tcp" accept"
    
    ```
 
    iptables:
 
    ```
-   iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009,220011 -m state --state NEW,ESTABLISHED -s 172.30.56.61,172.30.56.62,172.30.56.63  -j ACCEPT
+   iptables -A INPUT -p tcp -m multiport --dport 22000:22003,22005,22007,22009 -m state --state NEW,ESTABLISHED -s 172.30.56.61,172.30.56.62,172.30.56.63  -j ACCEPT
    ```
 
 

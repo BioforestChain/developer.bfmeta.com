@@ -38,7 +38,7 @@ To achieve node synchronization between multiple nodes, configure the node synch
 
 3. Add the IP of the node to be synchronized (assuming that the user configures the official network):
    
-   Configuration file path: `/installation directory/conf/bft-config-mainnet.json` (if the user configures the test network, modify the `bft-config-testnet.json` file). Configure the ip of the node to be connected in the peers list, so that it will automatically synchronize with the node during operation.
+   Configuration file path: `/installation directory/conf/bfm-config-mainnet.json` (if the user configures the test network, modify the `bfm-config-testnet.json` file). Configure the ip of the node to be connected in the peers list, so that it will automatically synchronize with the node during operation.
    
    For example, this node (`192.168.0.1`) needs to synchronize the other 2 nodes (`192.168.0.2`, `192.168.0.3`), which can be configured according to the following figure.
    

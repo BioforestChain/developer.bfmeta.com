@@ -353,9 +353,9 @@
 5. 配置文件
 
    - 下载创世块
-      向BFMeta团队购买创世块，并将文件放入 /data/BFMeta/genesisInfos 目录中
+      向BFMeta团队购买创世块，并将文件放入 /data/bfmchain/genesisInfos 目录中
      
-   - 修改配置文件(/data/BFMeta/conf/base-config.json)
+   - 修改配置文件(/data/bfmchain/conf/base-config.json)
      
      ​	配置外部引入创世块 isGenesisInfoProvideExternally为true 
      ​	配置正式网络或测试网络bnid为b或c 
@@ -364,7 +364,7 @@
      ​	配置所导入的创世块的magic chainMagic
      
    - 配置节点IP
-     修改配置文件/data/BFMeta/conf/bft-config-mainnet.json 中的 peers字段，添加初始连接的ip
+     修改配置文件/data/bfmchain/conf/bfm-config-mainnet.json 中的 peers字段，添加初始连接的ip
      
       ![config-peers](./images/config-peers.png)
      
