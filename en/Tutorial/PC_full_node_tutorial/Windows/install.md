@@ -175,7 +175,7 @@ You can obtain your BCF node program serial number in the following ways:
 
 ### Configuration file description
 
-After the installation is successful, you can find the BCF configuration file in the `/conf` folder under the installation directory. The following table uses the `bft-config-testnet.json` file as an example. The description of each field contained in the file is as follows:
+After the installation is successful, you can find the BCF configuration file in the `/conf` folder under the installation directory. The following table uses the `bfm-config-testnet.json` file as an example. The description of each field contained in the file is as follows:
 
 | **Parameter name**                         | **Parameter description**                                                                            |
 | ------------------------------- | ----------------------------------------------------------------------------------- |

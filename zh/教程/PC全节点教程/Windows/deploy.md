@@ -38,7 +38,7 @@
 
 3. 添加待同步的节点IP(假设用户配置的是正式网络)：
    
-   配置文件路径：`/安装目录/conf/bft-config-mainnet.json`(若用户配置的是测试网络，则修改`bft-config-testnet.json`文件)。在peers的list中配置需要连接的节点ip，这样在运行时会自动与该节点同步。
+   配置文件路径：`/安装目录/conf/bfm-config-mainnet.json`(若用户配置的是测试网络，则修改`bfm-config-testnet.json`文件)。在peers的list中配置需要连接的节点ip，这样在运行时会自动与该节点同步。
    
    例如本节点(`192.168.0.1`)需要同步的其他2个节点（`192.168.0.2`，`192.168.0.3`），可按照下图进行配置。
    
