@@ -112,7 +112,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
 - The installation and configuration steps of the node program and the upgrade service program are as follows:
 
-1. Create a directory for BFMeta
+1. Create a directory for bfmchain
 
     ```
     mkdir -p /data
@@ -120,10 +120,10 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
    
 
-2. Upload the BFMeta.zip file (the compressed file contains the BFMeta program and the upgrade service program) and unzip it to the /data directory
+2. Upload the zip files (the compressed file contains the BFMeta program and the upgrade service program) and unzip it to the /data directory
 
    ```
-   unzip -o -q /data/release/BFMeta.zip -d /data/
+   unzip -o -q /data/release/bfmchain.zip -d /data/
    
    ```
 
@@ -149,8 +149,8 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    ```
    echo -ne "
    	[program:bcf]	
-   	command=/data/BFMeta/bcf  ; 
-   	directory=/data/BFMeta
+   	command=/data/bfmchain/bcf  ; 
+   	directory=/data/bfmchain
    	autostart=true    ; 
    	user=root      ;
    	autorestart=unexpected   ;
@@ -160,7 +160,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    	redirect_stderr=true ;
    	stdout_logfile_maxbytes=50MB  ;
    	stdout_logfile_backups = 20  ;
-   	stdout_logfile=/data/BFMeta/logs/bcf.log    ;
+   	stdout_logfile=/data/bfmchain/logs/bcf.log    ;
    	stopasgroup=true   ;
    " >> /etc/supervisord.d/bcf.ini
    
@@ -247,7 +247,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
      c) The open port of the cloud server with a specific back-end tag (such as BFMeta node) allows all ip addresses to access:
      ![gcp-fw-limitsource-allsrc](./images/gcp-fw-limitsource-allsrc.png)
 
-     d) The open port of the cloud server with a specific back-end tag (such as bfmetanode) allows access to the characteristic ip address (such as 1.1.1.1):
+     d) The open port of the cloud server with a specific back-end tag (such as BFMeta node) allows access to the characteristic ip address (such as 1.1.1.1):
 
      ![gcp-fw-limitsource-limitsrc](./images/gcp-fw-limitsource-limitsrc.png)
      
@@ -323,24 +323,24 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 1. Create BFMeta directory
 
    ```
-   mkdir -p /data/BFMeta/
+   mkdir -p /data/bfmchain/
    ```
 
-2. Download the release version to obtain the complete BFMeta installation package (BFMeta.zip).
+2. Download the release version to obtain the complete BFMeta installation package (bfmchain.zip).
    
-3. Unzip BFMeta.zip to the /data/BFMeta directory
+3. Unzip bfmchain.zip to the /data/bfmchain directory
 
    ```
-   unzip -o -q /data/release/BFMeta.zip -d /data/BFMeta
+   unzip -o -q /data/release/bfmchain.zip -d /data/bfmchain
    ```
 
 4. Grant executable permissions to the file
 
    ```
-   chmod u+x /data/BFMeta/bcf
-   chmod u+x /data/BFMeta/mongoComponents/linux/mongo*
-   chmod u+x /data/BFMeta/turnserver/bin/turnserver
-   echo "export BCF_HOME=/data/BFMeta" >> /etc/profile
+   chmod u+x /data/bfmchain/bcf
+   chmod u+x /data/bfmchain/mongoComponents/linux/mongo*
+   chmod u+x /data/bfmchain/turnserver/bin/turnserver
+   echo "export BCF_HOME=/data/bfmchain" >> /etc/profile
    #Effective environment variables
    source /etc/profile
    ```
@@ -369,8 +369,8 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    ```
    echo -ne "
    [program:bcf]
-   command=/data/BFMeta/bcf;
-   directory=/data/BFMeta
+   command=/data/bfmchain/bcf;
+   directory=/data/bfmchain
    autostart=true;
    user=root;
    autorestart=unexpected;
@@ -380,7 +380,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    redirect_stderr=true;
    stdout_logfile_maxbytes=50MB;
    stdout_logfile_backups = 20;
-   stdout_logfile=/data/BFMeta/logs/bcf.log;
+   stdout_logfile=/data/bfmchain/logs/bcf.log;
    stopasgroup=true;
    ">> /etc/supervisord.d/bcf.ini
    ```
