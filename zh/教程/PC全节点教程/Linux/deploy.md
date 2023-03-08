@@ -135,7 +135,7 @@
    ```
    chmod u+x /data/BFMeta/bcf
    chmod u+x /data/BFMeta/mongoComponents/linux/mongo*
-   chmod u+x /data/BFMeta/turnserver/bin/turnserver
+   <!-- chmod u+x /data/BFMeta/turnserver/bin/turnserver -->
    chmod u+x /data/upgrade/mongoComponents/linux/mongo*
    chmod u+x /data/upgrade/upgrade
    echo "export BCF_HOME=/data/BFMeta"  >> /etc/profile

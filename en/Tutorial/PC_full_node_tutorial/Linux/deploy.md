@@ -5,7 +5,7 @@
 - Disable SELinux
 
    ```
-   sed -i's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
     
    ```
 
@@ -134,7 +134,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    ```
    chmod u+x /data/bfmchain/bcf
    chmod u+x /data/bfmchain/mongoComponents/linux/mongo*
-   chmod u+x /data/bfmchain/turnserver/bin/turnserver
+   <!-- chmod u+x /data/bfmchain/turnserver/bin/turnserver -->
    chmod u+x /data/upgrade/mongoComponents/linux/mongo*
    chmod u+x /data/upgrade/upgrade
    echo "export BCF_HOME=/data/bfmchain"  >> /etc/profile
