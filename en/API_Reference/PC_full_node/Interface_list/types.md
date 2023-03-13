@@ -2,7 +2,7 @@
 ## BFMeta.TransactionJSON
 
 ```typescript
-interface TransactionJSON<AssetJSON extends object = object> { 
+interface TransactionJSON <AssetJSON extends object = object> { 
     /**Event version number */
     version: number;
     /**Event type */
