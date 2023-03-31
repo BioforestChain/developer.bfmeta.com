@@ -210,10 +210,10 @@ type AccountAssetSubModel = {
     lastRoundInfo?: RoundInfoModel;
 };
 ```
-## BFMetaPC.ApiRequest.TRANSACTION.TrCommonParam
+## BFMetaNodeSDK.Transaction.TRANSACTION.TransactionCommonParams
 
 ```typescript
-interface TrCommonParam { 
+interface TransactionCommonParams { 
     /**The public key of the initiating account */
     publicKey: string;
     /**The security public key of the initiating account  */

@@ -210,10 +210,10 @@ type AccountAssetSubModel = {
     lastRoundInfo?: RoundInfoModel;
 };
 ```
-## BFMetaPC.ApiRequest.TRANSACTION.TrCommonParam
+## BFMetaNodeSDK.Transaction.TRANSACTION.TransactionCommonParams
 
 ```typescript
-interface TrCommonParam { 
+interface TransactionCommonParams { 
     /**发起账户的公钥 */
     publicKey: string;
     /**发起账户的安全公钥 */
