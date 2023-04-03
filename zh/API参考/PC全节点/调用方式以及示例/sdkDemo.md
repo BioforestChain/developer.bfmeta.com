@@ -1,6 +1,7 @@
 # SDK
 
 - 下列代码实现，以typescript为例，使用\ @bfmeta/node-sdk，来调用接口的方式,详见 https://github.com/BioforestChain/BFMeta-Node-SDK
+- 文档中的参数若与接口类型有出入，以接口类型为准。
 
 
 ```ts
