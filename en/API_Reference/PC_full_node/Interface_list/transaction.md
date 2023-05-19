@@ -1,6 +1,9 @@
 # Event class interface
 ## 1. Transfer event
 ### 1.1 Create transfer event
+- Introduction
+    - The most basic on-chain equity transfer, which Enables an asset to be transferred directly from address A to address B.
+    - The asset type is assetType, the quantity is amount, and the minimum unit is 1. 1BFM = 100000000
 - The full name of the interface: `trTransferAsset`
 - Interface abbreviation: `tta`
 - Callable methods: `Http, Websocket, command line`
@@ -117,6 +120,9 @@ type SendTrTransferAssetRespParam = {
 ```
 ## 2. Set a security password event
 ### 2.1 Create and set a security password event
+- Introduction
+    - This event sets security password for address. The address that has been configured with security password needs the signature of the security password to pass the authentication in all subsequent events.
+    - Sending this event repeatedly can change the security password, the latest security password is subject to the event that connects to the chain on the last time.
 - The full name of the interface: `trSignature`
 - Interface abbreviation: `tsi`
 - Callable methods: `Http, Websocket, command line`
@@ -225,6 +231,9 @@ type SendTrSignatureRespParam = {
 ```
 ## 3. Set username event
 ### 3.1 Create a set username event
+- Introduction
+    - This event will set the username for address. The username will be displayed on the chain.
+    - Each address has only one chance to set the username, and the username cannot be changed.
 - The full name of the interface: `trUsername`
 - Interface abbreviation：`tusr`
 - Callable methods: `Http, Websocket, command line`
@@ -336,6 +345,9 @@ type SendTrUsernameRespParam = {
 ```
 ## 4. Registered Trustee Events
 ### 4.1 Create registered trustee event
+- Introduction
+    - This event will register the address as trustee. When there are enough votes, the address that becomes trustee can get the quota for forging blocks
+    - Each address has only one opportunity to register trustee and cannot be cancelled after registration.
 - The full name of the interface: `trDelegate`
 - Interface abbreviation：`tdeg`
 - Callable methods: `Http, Websocket, command line`
@@ -445,6 +457,8 @@ type SendTrDelegateRespParam = {
 ```
 ## 5. Receive voting events
 ### 5.1 Create a receiving voting event
+- Introduction
+    - This event will enable the trustee address to receive votes, only enable this feature can the address be voted.
 - The full name of the interface: `trAcceptVote`
 - Interface abbreviation：`tav`
 - Callable methods: `Http, Websocket, command line`
@@ -554,6 +568,8 @@ type SendTrAcceptVoteRespParam = {
 ```
 ## 6. Refusal to vote event
 ### 6.1 Create a rejection vote event
+- Introduction
+    - This event will disable the feature of trustee address receiving votes, only enable this feature can the address be voted.
 - The full name of the interface: `trRejectVote`
 - Interface abbreviation：`trv`
 - Callable methods: `Http, Websocket, command line`
@@ -663,6 +679,10 @@ type SendTrRejectVoteRespParam = {
 ```
 ## 7. Voting event
 ### 7.1 Create a voting event
+- Introduction
+    - This event can vote to the trustee address.
+    - At the end of the round, 57 addresses with the highest number of votes counted in this round are selected as forgers.
+    - Whether one can continuously become a forger is determined by the consensus of the Genesis Block.
 - The full name of the interface: `trVote`
 - Interface abbreviation：`tv`
 - Callable methods: `Http, Websocket, command line`
@@ -775,6 +795,11 @@ type SendTrVoteRespParam = {
 ## 8. Issue dapp event
 
 ### 8.1 Create and release dapp event
+- Introduction
+    - Experimental interface
+    - Create a unique dappid on the chain
+    - The free Dappid is open for everyone to use, and for the paid dappid, others need to buy the right to use before using, a purchase, lifetime use
+    - If the owner of the dappid is a trustee and the feature of receiving votes is enabled, then others must vote for the owner within two rounds before using dappid again
 
 - The full name of the interface: `trDapp`
 - Interface abbreviation：`tda`
@@ -903,6 +928,9 @@ type SendTrDappRespParam = {
 ## 9. dapp purchase event
 
 ### 9.1 Create dapp purchase event
+- Introduction
+    - Experimental interface
+    - Purchase the right to use a dappid
 
 - The full name of the interface: `trDappPurchasing`
 - Interface abbreviation：`tdap`
@@ -1023,6 +1051,10 @@ type SendTrDappPurchasingRespParam = {
 ## 10. Evidence Event
 
 ### 10.1 Create Attestation Event
+- Introduction
+    - Experimental interface
+    - To store certain data permanently on the blockchain 
+    - Need to use dappid
 
 - The full name of the interface: `trMark`
 - Interface abbreviation：`tmr`
@@ -1130,7 +1162,7 @@ type SendTrMarkRespParam = {
     success: true;
     /**Minimum Fee */
     minFee: number;
-    /**完整的存证事件 */
+    /**The complete attestation event */
     result: BFMetaCore.TransactionJSON<BFMetaCore.MarkAssetJSON>;
 } | {
     /**Fail */
@@ -1147,6 +1179,12 @@ type SendTrMarkRespParam = {
 ## 11. Token Issuance Event
 
 ### 11.1 Create token issuance event
+- Introduction
+    - Freeze the account, and create a specified amount of new equity on the chain
+    - It takes a certain amount of main equity to initiate the event.
+    - Initiating this event will directly freeze this address, the frozen address cannot initiate any event, but it can receive events, and transfer main equity to address through asset transfer, so as to increase the number of frozen main equity.
+    - The greater the number of main equity that are frozen, the greater the main equity that the issued equity can use as security. 
+    - The main equity frozen at the time of asset destruction will be redeemed to the designated account in proportion to the amount destroyed.
 
 - The full name of the interface: `trIssueAsset`
 - Interface abbreviation：`tia`
@@ -1272,6 +1310,10 @@ type SendTrIssueAssetRespParam = {
 ## 12. token destruction event
 
 ### 12.1 Create token destruction event
+- Introduction
+    - Destroy the specified amount of equity under the account and redeem the main equity of the chain
+    - Main and external equity cannot be destroyed
+    - The redeemed main equity will return to the recipientId address
 
 - The full name of the interface: `trDestroyAsset`
 - Interface abbreviation：`tdya`
@@ -1342,6 +1384,8 @@ interface SendTrDestoryAssetParam {
 ## 13. token Exchange Event
 
 ### 13.1 Create token exchange event
+- Introduction
+    - Freeze certain equity in your own account to the chain at a specified rate, waiting for other accounts holding a specified equity to exchange
 
 - The full name of the interface: `trToExchangeAsset`
 - Interface abbreviation：`ttea`
@@ -1354,6 +1398,25 @@ interface SendTrDestoryAssetParam {
 interface TrToExchangeAsset extends TransactionCommonParams{
     /**Encryption key group, if the key is filled in, the event that accepts the exchange of rights and interests must carry a signature pair generated by a certain key */
     ciphertexts?: string[];
+    interface TrToExchangeAsset extends TransactionCommonParams{
+     /**The public key array generated by the encryption key */
+    cipherPublicKeys: string[];
+    /**The source chain network identifier of the equity used for exchange, consisting of uppercase letters or digits, 5 characters, the last digit is the check digit */
+    toExchangeSource: string;
+    /**The source chain network identifier of the equity being exchanged, consisting of uppercase letter or number, 5 characters, the last digit is check the digit */
+    beExchangeSource: string;
+    /**The source name of the equity used for exchange, consisting of lowercase letters, 3-8 digits */
+    toExchangeChainName: string;
+    /**The source chain name of the equity being exchanged, consisting of lowercase letters, 3-8 digits */
+    beExchangeChainName: string;
+    /**The name of the equity used for exchange, consisting of uppercase letter, 3-5 digits */
+    toExchangeAsset: string;
+    /**The name of the equity being exchanged，consisting of uppercase letter, 3-5 digits */
+    beExchangeAsset: string;
+    /**The number of equity used for exchange, consisting of 0-9 and excluding the decimal point, must be greater than 0 */
+    toExchangeNumber: string;
+    /**The exchange ratio of equity */
+    exchangeRate: BFMeta.RateJSON<string>;
 }
 
 
@@ -1447,7 +1510,7 @@ type SendTrToExchangeAssetRespParam = {
     success: true;
     /**Minimum Fee */
     minFee: number;
-    /**完整的权益交换事件 */
+    /**Complete equity exchange event */
     result: BFMetaCore.TransactionJSON<BFMetaCore.ToExchangeAssetAssetJSON>;
 } | {
     /**Fail */
@@ -1465,6 +1528,9 @@ type SendTrToExchangeAssetRespParam = {
 ## 14. Accept the rights exchange event
 
 ### 14.1 Create and accept token exchange event
+- Introduction
+    - Exchange a certain equity on one's own account for a certain frozen equity of others on the chain
+    - The signature of the corresponding exchange event for transactionSignature
 
 - The full name of the interface: `trBeExchangeAsset`
 - Interface abbreviation：`tbea`
@@ -1594,6 +1660,9 @@ type SendTrBeExchangeAssetRespParam = {
 
 ## 15 Asset exchange event
 ### 15.1 Create an asset exchange event
+- Introduction
+    - It has been replaced by other events and is not recommended for use at this time.
+    - Freeze certain assets in your own account into the chain, waiting for another account holding a certain specified asset to exchange
 - The full name of the interface：`trToExchangeSpecAsset`
 - Interface abbreviation：`ttesa`
 - Callable methods：`Http,Websocket,command line`
@@ -1703,6 +1772,9 @@ type SendTrToExchangeSpecAssetRespParam = {
 ```
 ## 16 Accept asset exchange events
 ### 16.1 Create accept asset exchange event
+- Introduction
+    - It has been replaced by other events and is currently not recommended for use.
+    - Exchange a certain asset in your own account for a certain frozen asset of others on the chain
 - The full name of the interface：`trBeExchangeSpecAsset`
 - Interface abbreviation：`tbesa`
 - Callable methods：`Http,Websocket,command line`
@@ -1814,6 +1886,8 @@ type SendTrBeExchangeSpecAssetRespParam = {
 ```
 ## 17 Token donation event (red envelope event)
 ### 17.1 Create an token gift event (red envelope event)
+- Introduction
+    - To freeze a portion of a certain equity in the account into the chain and give it to a people or some people for free
 - The full name of the interface：`trGiftAsset`
 - Interface abbreviation：`tga`
 - Callable methods：`Http,Websocket,command line`
@@ -1923,6 +1997,8 @@ type SendTrGiftAssetRespParam = {
 ```
 ## 18 Accepting token donation event (grabbing red envelope event)
 ### 18.1 Create an event for accepting token (grab a red envelope event)
+- Introduction
+    - Accept a certain equity given by others on the chain, through this event you can get some equity given by others for free
 - The full name of the interface：`trGrabAsset`
 - Interface abbreviation：`tgra`
 - Callable methods：`Http,Websocket,command line`
@@ -2038,6 +2114,10 @@ type SendTrGrabAssetRespParam = {
 ```
 ## 19 token delegation event
 ### 19.1 Create an token delegation event
+- Introduction
+    - Experimental interface, currently not recommended for use
+    - Freeze a certain asset on the chain, and specify which accounts' confirmations are required and the number of confirmations
+    - When the number of confirmations reaches the specified number, the witnessed assets will be transferred to the specified account
 - The full name of the interface：`trTrustAsset`
 - Interface abbreviation：`ttra`
 - Callable methods：`Http,Websocket,command line`
@@ -2159,6 +2239,9 @@ type SendTrTrustAssetRespParam = {
 ```
 ## 20 Signing for entrusted token
 ### 20.1 Create a delegated event for signing token
+- Introduction
+    - Experimental interface, currently not recommended for use
+    - Accept the witness, the witness object will be automatically unfrozen to the designated account when the conditions are satisfied
 - The full name of the interface：`trSignForAsset`
 - Interface abbreviation：`tsfa`
 - Callable methods：`Http,Websocket,command line`
@@ -2268,6 +2351,10 @@ type SendTrSignForAssetRespParam = {
 ```
 ## 21 Token move out
 ### 21.1 Create transaction for asset move out
+- Introduction
+    - Experimental interface, currently not recommended for use
+    - Move main equity of a certain chain under the framwork of bioforest chain out of this chain, the account initiating this event  will be frozen, and the frozen account cannot initiate any events
+    - The account can only hold main equity, and can only move out all main equity in the account
 - The full name of the interface：`trEmigrateAsset`
 - Interface abbreviation：`tema`
 - Callable methods：`Http,Websocket,command line`
@@ -2322,6 +2409,9 @@ type TrEmigrateAssetRespParam = {
 ```
 ## 22 Token immigration transaction
 ### 22.1 Create token migration transaction
+- Introduction 
+    - Experimental interface, currently not recommended for use
+    - Transfer the main equity of a certain chain under the framework of bioforest chain this chain
 - The full name of the interface：`trImmigrateAsset`
 - Interface abbreviation：`tima`
 - Callable methods：`Http,Websocket,command line`
@@ -2378,6 +2468,9 @@ type TrImmigrateAssetRespParam = {
 ```
 ## 23 Registration and cancellation of LNS events
 ### 23.1 Create registration and logout LNS events
+- Introduction
+    - Registration: create a unique bit name on the chain, which can be used to locate a certain address, a certain ip address or latitude and longitude, etc (resolution value), and cannot create a bit name beyond the level
+    - Logout: delete a non-chain bit name, deleting this bit name will delete the resolution value of this bit name synchronously
 - The full name of the interface：`trLocationName`
 - Interface abbreviation：`tln`
 - Callable methods：`Http,Websocket,command line`
@@ -2491,6 +2584,8 @@ type SendTrImmigrateAssetRespParam = {
 ```
 ## 24 Set LNS administrator event
 ### 24.1 Create setting LNS administrator event
+- Introduction
+    - Set the administrator of a bit name on the chain, the administrator can set the resolution value of the bit name
 - The full name of the interface：`trSetLnsManager`
 - Interface abbreviation：`tslm`
 - Callable methods：`Http,Websocket,command line`
@@ -2602,6 +2697,8 @@ type SendTrSetLnsManagerRespParam = {
 ```
 ## 25 Set LNS parsing value event
 ### 25.1 Create and set LNS resolution value event
+- Introduction
+    - Sets the resolution value of a bit name on a chain
 - The full name of the interface：`trSetLnsRecordValue`
 - Interface abbreviation：`tslns`
 - Callable methods：`Http,Websocket,command line`
@@ -2719,6 +2816,9 @@ type SendTrSetLnsRecordValueRespParam = {
 ```
 ## 26 Issue Asset / Token  Template Event
 ### 26.1 Create Issue Asset / Token  Template Event
+- Introduction
+    - Create an asset equity template on the chain by freezing assets, and sending this event will freeze the account, and the frozen account cannot initiate any events
+    - Corresponding to certain types of real objects in reality, such as paintings, movies, novels, and so on, and set some properties of assets and equity under this category
 - The full name of the interface：`trIssueEntityFactory`
 - Interface abbreviation：`tief`
 - Callable methods：`Http,Websocket,command line`
@@ -2727,13 +2827,13 @@ type SendTrSetLnsRecordValueRespParam = {
 - Request parameters：
 ```typescript
 interface TrIssueEntityFactory extends TransactionCommonParams {
-    /**非同质资产模板 */
+    /**Non-homogeneous asset template */
     factoryId: string;
-    /**允许发行的非同质资产数量 */
+    /**The number of non-homogeneous assets allowed to be issued */
     entityPrealnum: string;
-    /**发行非同质资产时冻结的主权益数量，销毁时解冻 */
+    /**The amount of main equity frozen when non-homogeneous assets are issued, which will be unfroze when being destroyed*/
     entityFrozenAssetPrealnum: string;
-    /**购买模板使用全的主权益数量 */
+    /**The amount of main equity used to purchase the template */
     purchaseAssetPrealnum: string;
     /**The receiving account address of the event, base58 encoded hexadecimal string */
     recipientId: string;
@@ -2836,6 +2936,9 @@ type SendTrIssueEntityFactoryRespParam = {
 ```
 ## 27 Issue Asset / Token  Template Event
 ### 27.1 Create Issue Asset / Token  Template Event
+- Introduction
+    - Create an asset equity template on the chain by destroying assets, and sending this event will destroy the corresponding amount of main equity in account
+    - Corresponding to certain types of real objects in reality, such as paintings, movies, novels, and so on, and set some properties of assets and equity under this category
 - The full name of the interface：`trIssueEntityFactoryV1`
 - Interface abbreviation：`tief1`
 - Callable methods：`Http,Websocket,command line`
@@ -2844,13 +2947,13 @@ type SendTrIssueEntityFactoryRespParam = {
 - Request parameters：
 ```typescript
 interface TrIssueEntityFactory extends TransactionCommonParams {
-    /**非同质资产模板 */
+    /**Non-homogeneous asset template */
     factoryId: string;
-    /**允许发行的非同质资产数量 */
+    /**The number of non-homogeneous assets allowed to be issued */
     entityPrealnum: string;
-    /**发行非同质资产时冻结的主权益数量，销毁时解冻 */
+    /**The amount of main equity frozen when non-homogeneous assets are issued, which will be unfroze when being destroyed */
     entityFrozenAssetPrealnum: string;
-    /**购买模板使用全的主权益数量 */
+    /**The amount of main equity used to purchase the template */
     purchaseAssetPrealnum: string;
     /**The receiving account address of the event, base58 encoded hexadecimal string */
     recipientId: string;
@@ -2927,6 +3030,9 @@ type SendTrIssueEntityFactoryRespParam = {
 ```
 ## 28 Issuance of Asset / Token  events
 ### 28.1 Create an issue Asset / Token  event
+- Introduction
+    - Create a certain asset equity on the chain, and the asset equity can be used to bind something in the real world, such as a painting or a bottle of wine
+    - Asset equity needs to specify a asset equity template
 - The full name of the interface：`trIssueEntity`
 - Interface abbreviation：`tie`
 - Callable methods：`Http,Websocket,command line`
@@ -3040,6 +3146,8 @@ type SendTrIssueEntityFactoryRespParam = {
 ```
 ## 29 Asset Destruction Event
 ### 29.1 Create an asset destruction event
+- Introduction
+    - Destroy a certain asset equity in your account, and this asset wquity can no longer circulate in the chain after destruction
 - The full name of the interface：`trDestoryEntity`
 - Interface abbreviation：`tde`
 - Callable methods：`Http,Websocket,command line`
@@ -3092,6 +3200,9 @@ interface SendTrDestoryEntityParam{
 - Return parameters：none
 ## 30 Any asset exchange event
 ### 30.1 Create any asset exchange event
+- Introduction
+    - Swaps of any type of on-chain asset(one for one), such as one main equity for one chain domain name
+    - Freeze a certain asset in one's own account, waiting for the consent of the holder of the specified asset to exchange
 - The full name of the interface：`trToExchangeAny`
 - Interface abbreviation：`tteay`
 - Callable methods：`Http,Websocket,command line`
@@ -3227,6 +3338,9 @@ type SendTrToExchangeAnyRespParam = {
 ```
 ## 31 Accept any asset swap event
 ### 31.1 Create an event that accepts any asset exchange
+- Introduction
+    - Accept any type of asset swap (one for one)
+    - Exchange certai assets on your account for certain  frozen assets on the chain
 - The full name of the interface：`trBeExchangeAny`
 - Interface abbreviation：`tbeay`
 - Callable methods：`Http,Websocket,command line`
@@ -3346,6 +3460,8 @@ type SendTrBeExchangeAnyRespParam = {
 ```
 ## 32 Any asset transfer event
 ### 32.1 Create arbitrary asset transfer events
+- Introduction
+    - Transfer certain assets in the account(entity, dappid, chain domain name, or a certain equity) to a specified account
 - The full name of the interface：`trTransferAny`
 - Interface abbreviation：`ttay`
 - Callable methods：`Http,Websocket,command line`
@@ -3410,6 +3526,8 @@ interface SendTrTransferAnyParam{
 - Return parameters：none
 ## 33 Any asset donation event
 ### 33.1 Create any asset gift event
+- Introduction
+    - Freeze certain assets under the account to the chain, give to a certain account or designated account for free
 - The full name of the interface：`trGiftAny`
 - Interface abbreviation：`tgay`
 - Callable methods：`Http,Websocket,command line`
@@ -3487,6 +3605,8 @@ interface SendTrGiftAnyParam{
 - Return parameters：none
 ## 34 Accept any asset donation event
 ### 34.1 Create an event that accepts any asset gift
+- Introduction
+    - Accept any asset gift, and through this event, you can receive a certain asset gift from other on-chain accounts for free
 - The full name of the interface：`trGrabAny`
 - Interface abbreviation：`tgray`
 - Callable methods：`Http,Websocket,command line`
@@ -3545,6 +3665,8 @@ interface SendTrGrabAnyParam{
 - Return parameters：none
 ## 35 Mass issuance of Asset / Token  events
 ### 35.1 Create a mass issue Asset / Token  event
+- Introduction
+    - Mass issue entity
 - The full name of the interface：`trIssueEntityMultiV1`
 - Interface abbreviation：`tiem1`
 - Callable methods：`Http,Websocket,command line`
@@ -3603,6 +3725,9 @@ interface SendTrIssueEntityMultiV1Param{
 - Return parameters：none
 ## 36 Batch arbitrary asset exchange events
 ### 36.1 Create batch arbitrary asset exchange events
+- Introduction
+    - Swap any type of asset on the chain (multiple assets for one asset), such as exchanging 1 main equity and 1 dappid for 1 chain domain name
+    - Freeze one or more assets in your own account, waiting for the consent of the holder of the specified asset to exchange
 - The full name of the interface：`trToExchangeAnyMulti`
 - Interface abbreviation：`tteaym`
 - Callable methods：`Http,Websocket,command line`
@@ -3698,6 +3823,9 @@ interface SendTrToExchangeAnyMultiParam{
 - Return parameters：none
 ## 37 Accept batches of arbitrary asset swap events
 ### 37.1 Create events that accept bulk arbitrary asset swaps
+- Introduction
+    - Accept any type of asset swap (multiple assets for one asset)
+    - Exchange some assets in your account for some on-chain frozen assets
 - The full name of the interface：`trBeExchangeAnyMulti`
 - Interface abbreviation：`tbeaym`
 - Callable methods：`Http,Websocket,command line`
@@ -3795,6 +3923,9 @@ interface SendTrBeExchangeAnyMultiParam{
 - Return parameters：none
 ## 38 Register Chain Events
 ### 38.1 Create a registration chain event
+- Introduction
+    - Experimental interface, currently not recommended for use
+    - Register a certain chain under the framework of bioforest chain to the chain, which prepares for the cross-chain of main equity
 - The full name of the interface：`trRegisterChain`
 - Interface abbreviation：`trc`
 - Callable methods：`Http,Websocket,command line`
