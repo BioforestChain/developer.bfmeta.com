@@ -103,6 +103,16 @@ Set the upper limit of visits in node interface and traffic.
 Click the <Node Pool Management> on the node settings page to set the whitelist of connected nodes.
 ![4.2](./media/4.9.png)
 
+Supplementary note: Obtaining whitelist nodes
+
+Step 1: Click the link below：
+[BFM PC Node Program Information](https://github.com/BioforestChain/BCF-Infomation/tree/main/)
+
+Step 2: Find the node program list on the page and click any data in the available IP address list to open a new page and view the IP address information of the node.
+
+Step 3: Fill the node information into the mobile terminal to add the whitelist nodes.
+
+![4.91](./media/4.91.png)
 
 ### Restart the node
 
