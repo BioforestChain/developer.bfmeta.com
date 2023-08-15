@@ -190,7 +190,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    
    ```
    Allow all external ip access:
-    firewall-cmd --add-port=22000/tcp --add-port=22001/tcp --add-port=22002/tcp --add-port=22003/tcp --add-port=22005/tcp -- add-port=22007/tcp --add-port=22009/tcp --permanent
+    firewall-cmd --add-port=22000/tcp --add-port=22001/tcp --add-port=22002/tcp --add-port=22003/tcp --add-port=22005/tcp --add-port=22007/tcp --add-port=22009/tcp --permanent
    
     Allow external ip (such as 1.1.1.1/32) to access:
    firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="1.1.1.1/32" port port="22000" protocol="tcp" accept"
