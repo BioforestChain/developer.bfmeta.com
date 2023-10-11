@@ -1,6 +1,7 @@
 # Node deployment
 
-## Prepare
+## RockyLinux 7.9
+### Prepare
 
 - Disable SELinux
 
@@ -94,9 +95,9 @@
 
  
 
-## Public chain node deployment
+### Public chain node deployment
 
-### Node program installation and configuration
+#### Node program installation and configuration
 
 In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we recommend that you use the following configuration equipment:
 
@@ -182,7 +183,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    " >> /etc/supervisord.d/upgrade.ini
    ```
 
-### Firewall configuration
+#### Firewall configuration
 
 1. System firewall policy
    
@@ -291,7 +292,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    
    
    
-### Start the service
+#### Start the service
 
 1. Start BFMeta node program-BCF
 
@@ -303,9 +304,9 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
 
 
-## Private chain node deployment
+### Private chain node deployment
 
-### environment
+#### environment
 
 |       | Configuration                                                  | IP           |
 | ----- | ----------------------------------------------------- | ------------ |
@@ -316,7 +317,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 
 
 
-### Node program installation and configuration
+#### Node program installation and configuration
 
 > Please make sure that your device has installed the appropriate dependent environment.
 
@@ -386,7 +387,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    ```
 
 
-### Firewall configuration
+#### Firewall configuration
 
 1. System firewall strategy (only 3 nodes are open for interconnection)
 
@@ -424,7 +425,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    ```
 
 
-### Start the service
+#### Start the service
 
 1. Start BFMeta node program-BCF
 
@@ -432,4 +433,243 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    systemctl enable supervisord
    systemctl start supervisord 
    
+   ```
+
+
+## RockyLinux 8.x
+
+### Prepare
+
+- Disable SELinux
+
+   ```
+   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/configselinux/config
+   setenforce 0
+    
+   ```
+
+- Install the software package
+  
+   ```
+   yum install -y zip unzip ntp epel-release
+
+   ```
+  
+- Configure to add a clock source
+  - Add clock source
+
+   ```
+   sed -i "/^pool/ a pool cn.pool.ntp.org iburst" /etc/chrony.conf
+   ```
+
+  - Synchronization time
+
+   ```
+   chronyc makestep
+   ```
+
+- Adjust the maximum number of files that users can use:
+
+  ```
+  echo -ne "
+    * soft nofile 65536
+    * hard nofile 65536
+  " >> /etc/security/limits.conf
+  ```
+
+  
+
+- Kernel parameter optimization
+  - Set kernel parameters
+
+  ```
+  echo -ne "
+     net.ipv4.tcp_max_tw_buckets=10000
+	 net.ipv4.tcp_sack=1
+	 net.ipv4.tcp_window_scaling=1
+	 net.ipv4.tcp_rmem=4096 87380 4194304
+	 net.ipv4.tcp_wmem=4096 16384 4194304
+	 net.ipv4.tcp_max_syn_backlog=65536
+	 net.core.netdev_max_backlog=65536
+	 net.core.somaxconn=32768
+	 net.core.wmem_default=8388608
+	 net.core.rmem_default=8388608
+	 net.core.wmem_max=16777216
+	 net.core.rmem_max=16777216
+	 net.ipv4.tcp_synack_retries=2
+	 net.ipv4.tcp_syn_retries=2
+	 net.ipv4.tcp_tw_reuse=1
+	 net.ipv4.tcp_keepalive_time=1200
+	 net.ipv4.tcp_mem=94500000 915000000 927000000
+	 net.ipv4.tcp_max_orphans=3276800
+	 net.ipv4.ip_local_port_range=9000 65000
+	 vm.swappiness=0
+	 net.ipv4.tcp_fin_timeout=15
+	 fs.file-max=1048576
+  " >> /etc/sysctl.conf  
+  ```
+  - Effective kernel parameter configuration
+  ```
+  sysctl -p  
+  ```  
+
+
+
+- Install dependencies
+
+  ```
+  yum -y install compat-openssl10  
+  ```
+
+
+
+ 
+
+### Public chain node deployment
+
+#### Node program installation and configuration
+
+In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we recommend that you use the following configuration equipment:
+
+   CPU: 16 cores (main frequency 3.0G+)
+
+   Memory: 16G
+
+   Hard Disk: SSD 1T or above
+
+   System: CentOS 7.*
+
+
+
+- The installation and configuration steps of the node program and the upgrade service program are as follows:
+
+1. Create a directory for bfmchain
+
+    ```
+    mkdir -p /data
+    ```
+
+   
+
+2. Upload the zip files (the compressed file contains the BFMeta program and the upgrade service program) and unzip it to the /data directory
+
+   ```
+   unzip -o -q bfmeta-mainnet-3.7.2-linux-full.zip -d /data/   
+   ```
+
+   
+
+3. Grant executable permissions to the file
+
+   ```
+   chmod u+x /data/bfmeta/bcf
+	chmod u+x /data/bfmeta/mongoComponents/linux/mongo*
+	chmod u+x /data/upgrade/mongoComponents/linux/mongo*
+	chmod u+x /data/upgrade/upgrade
+   ```
+
+4. Set the main program environment variable
+
+   ```
+   echo "export BCF_HOME=/data/bfmeta"  >> /etc/profile
+   source  /etc/profile
+   ```   
+5. Run node program manually
+
+   ```
+	cd /data/bfmeta/
+	./bcf
+   ```   
+
+6. Configure supervisor (manage BFMeta running in the background and upgrade service process)
+
+- Install supervisor
+
+  ```
+  yum install -y supervisor  
+  ```
+- Configure managed nodes and upgrade service processes
+
+  ```
+  yum install -y supervisor  
+  ``` 
+   ```
+   echo -ne "
+   	[program:bcf]	
+   	command=/data/bfmeta/bcf  ; 
+   	directory=/data/bfmeta
+   	autostart=true    ; 
+   	user=root      ;
+   	autorestart=unexpected   ;
+   	exitcode=0,2   ;
+   	startretries=3    ;
+   	priority=999     ;
+   	redirect_stderr=true ;
+   	stdout_logfile_maxbytes=50MB  ;
+   	stdout_logfile_backups = 20  ;
+   	stdout_logfile=/data/bfmeta/logs/bcf.log    ;
+   	stopasgroup=true   ;
+   " >> /etc/supervisord.d/bcf.ini
+   
+   echo -ne "
+   	[program:upgrade]
+   	command=/data/upgrade/upgrade  ; 
+   	directory=/data/upgrade
+   	autostart=true       ; 
+   	user=root           ;
+   	autorestart=unexpected    ;
+   	exitcode=0,2    ;
+   	startretries=3       ;
+   	priority=999         ;
+   	redirect_stderr=true ;
+   	stdout_logfile_maxbytes=50MB  ;
+   	stdout_logfile_backups = 20   ;
+   	stdout_logfile=/data/upgrade/logs/console.log      ;
+   	stopasgroup=true     ;
+   " >> /etc/supervisord.d/upgrade.ini
+   ```
+- Start supervisord service
+
+  ```
+  systemctl start supervisord  
+  ``` 
+- upervisor View process status
+
+  ```
+  supervisorctl status  
+  ``` 
+- Start/stop bcf service using supervisor
+
+  ```
+  supervisorctl start bcf
+  supervisorctl stop bcf
+  ``` 
+- Set the supervisord service to start at boot
+
+  ```
+  systemctl enable supervisord
+  ``` 
+#### Firewall configuration
+
+1. System firewall policy
+   
+   - View current firewall policy
+   
+   ```
+   firewall-cmd --list-all   
+   ```
+   - Add open business port
+   
+   ```
+   firewall-cmd --zone=public --add-port=24000/tcp --add-port=24001/tcp --add-port=24002/tcp --add-port=24003/tcp --add-port=24005/tcp --add-port=24007/tcp --add-port=24009/tcp --permanent 
+   ```  
+   - Reload configuration
+   
+   ```
+   firewall-cmd --reload   
+   ```
+   - Check the current firewall policy again
+   
+   ```
+   Check the current firewall policy again   
    ```
