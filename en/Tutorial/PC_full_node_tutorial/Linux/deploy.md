@@ -1,6 +1,6 @@
 # Node deployment
 
-## RockyLinux 7.9
+## Centos 7.9
 ### Prepare
 
 - Disable SELinux
@@ -451,7 +451,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 - Install the software package
   
    ```
-   yum install -y zip unzip ntp epel-release
+   yum install -y zip unzip epel-release
 
    ```
   
@@ -590,9 +590,6 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
   ```
 - Configure managed nodes and upgrade service processes
 
-  ```
-  yum install -y supervisor  
-  ``` 
    ```
    echo -ne "
    	[program:bcf]	
@@ -658,7 +655,7 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    ```
    firewall-cmd --list-all   
    ```
-   - Add open business port
+   - Add an open service port
    
    ```
    firewall-cmd --zone=public --add-port=24000/tcp --add-port=24001/tcp --add-port=24002/tcp --add-port=24003/tcp --add-port=24005/tcp --add-port=24007/tcp --add-port=24009/tcp --permanent 
@@ -671,5 +668,5 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
    - Check the current firewall policy again
    
    ```
-   Check the current firewall policy again   
+   firewall-cmd --list-all 
    ```
