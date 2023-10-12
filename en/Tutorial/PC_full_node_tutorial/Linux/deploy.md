@@ -100,7 +100,7 @@
 #### Node program installation and configuration
 - Minimum configuration to run BCF program：
 
-   CPU: 2 cores (main frequency 3.0G+)+
+   CPU: 2+ cores (X86，main frequency 3.0G+)
 
    Memory: 8G
 
@@ -540,7 +540,7 @@
 #### Node program installation and configuration
 - Minimum configuration to run BCF program：
 
-   CPU: 2 cores (main frequency 3.0G+)+
+   CPU: 2+ cores (X86，main frequency 3.0G+)
 
    Memory: 8G
 
