@@ -1,6 +1,6 @@
 # Node deployment
 
-## Centos 7.9
+## CentOS 7.9
 ### Prepare
 
 - Disable SELinux
@@ -516,7 +516,9 @@
 	 fs.file-max=1048576
   " >> /etc/sysctl.conf  
   ```
+
   - Effective kernel parameter configuration
+
   ```
   sysctl -p  
   ```  
