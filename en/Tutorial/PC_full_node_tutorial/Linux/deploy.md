@@ -98,17 +98,25 @@
 ### Public chain node deployment
 
 #### Node program installation and configuration
+- Minimum configuration to run BCF program：
 
-In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we recommend that you use the following configuration equipment:
+   CPU: 2 cores (main frequency 3.0G+)+
 
-   CPU: 16 cores (main frequency 3.0G+)
+   Memory: 8G
 
-   Memory: 16G
-
-   Hard Disk: SSD 1T or above
+   Hard Disk: SSD 500G or above
 
    System: CentOS 7.*
 
+- we recommend that you use the following configuration equipment:
+
+   CPU: 8 cores (main frequency 3.0G+)+
+
+   Memory: 16G
+
+   Hard Disk: SSD 2T or above
+
+   System: CentOS 7.*
 
 
 - The installation and configuration steps of the node program and the upgrade service program are as follows:
@@ -528,16 +536,25 @@ In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we 
 ### Public chain node deployment
 
 #### Node program installation and configuration
+- Minimum configuration to run BCF program：
 
-In order to ensure that you can run the BFMeta PC node program-BCF smoothly, we recommend that you use the following configuration equipment:
+   CPU: 2 cores (main frequency 3.0G+)+
 
-   CPU: 16 cores (main frequency 3.0G+)
+   Memory: 8G
+
+   Hard Disk: SSD 500G or above
+
+   System: RockyLinux 8.x
+
+- we recommend that you use the following configuration equipment:
+
+   CPU: 8 cores (main frequency 3.0G+)+
 
    Memory: 16G
 
-   Hard Disk: SSD 1T or above
+   Hard Disk: SSD 2T or above
 
-   System: CentOS 7.*
+   System: RockyLinux 8.x
 
 
 
